@@ -1,0 +1,54 @@
+% Figure 1: Ecosystem map (dependency notation after Øverby & Audestad, Fig. 4.3)
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  box/.style={draw, rounded corners=2pt, align=center, text width=3.3cm, minimum height=1.0cm, fill=white},
+  core/.style={box, text width=2.8cm, fill=blue!8, draw=blue!60!black, line width=0.8pt},
+  partner/.style={box, fill=orange!10, draw=orange!70!black},
+  ind/.style={box, text width=2.5cm, fill=gray!8, draw=gray!60, dashed},
+  dep/.style={-{Stealth[length=2.2mm]}, thick},
+  mut/.style={{Stealth[length=2.2mm]}-{Stealth[length=2.2mm]}, thick},
+  lbl/.style={font=\scriptsize, fill=white, inner sep=1pt, align=center}
+]
+% core column
+\node[core] (np)   at (0,0.9)   {\textbf{Nord Pool AS}\\day-ahead, intraday,\\CCP, data};
+\node[box]  (epex) at (0,-1.4)  {\textbf{EPEX SPOT}\\(other NEMOs)};
+\node[font=\scriptsize\itshape, text=blue!50!black] (sdaclbl) at (0,-2.3) {SDAC: shared coupling};
+\begin{scope}[on background layer]
+  \node[draw=blue!50, dashed, rounded corners=4pt, fill=blue!3, inner sep=6pt,
+        fit=(np)(epex)(sdaclbl)] (sdac) {};
+\end{scope}
+\node[box, text width=4.4cm] (reg) at (0,3.5) {\textbf{Regulators}\\NEMO designation, CACM,\\REMIT, NIS2/NCCS};
+
+% left column
+\node[partner] (eur) at (-5.5,0.9)  {\textbf{Euronext} (66\%)\\capital, technology,\\futures, clearing};
+\node[box]     (mem) at (-5.5,-1.4) {\textbf{Market participants}\\(about 400 firms)};
+
+% right column: all TSOs
+\node[partner] (tso)  at (5.5,0.9)  {\textbf{Owner TSOs} (34\%)\\Statnett, Svenska\\kraftnät, EPSO-G};
+\node[box]     (ntso) at (5.5,-1.4) {\textbf{Non-owner TSOs}\\Fingrid, Energinet, \dots};
+\begin{scope}[on background layer]
+  \node[draw=orange!60!black, dotted, rounded corners=4pt, inner sep=5pt, fit=(tso)(ntso)] (tsos) {};
+\end{scope}
+
+% bottom row: indirect stakeholders
+\node[ind] (cons) at (-5.5,-4.6) {Households and firms on spot contracts};
+\node[ind] (fut)  at (-2.4,-4.6) {Futures traders\\(Euronext, EEX)};
+\node[ind] (data) at (2.4,-4.6)  {Data users};
+\node[ind] (own)  at (5.5,-4.6)  {Owner states;\\Euronext shareholders};
+
+% dependencies: A -> B means "A depends on B"
+\draw[mut] (eur) -- node[lbl, above=2pt]{ownership $\leftrightarrow$\\technology, capital} (np);
+\draw[dep] (np) -- node[lbl, above=2pt]{capacity data\\(from all TSOs)} (tso);
+\draw[dep] (ntso) -- node[lbl, above=2pt]{depend on\\coupling} (ntso -| sdac.east);
+\draw[mut] (mem) -- node[lbl, above=2pt]{liquidity $\leftrightarrow$\\settlement} (mem -| sdac.west);
+\draw[dep] (np) -- node[lbl, right]{designation} (reg);
+\draw[dep] (cons) -- node[lbl, right]{price pass-through} (mem);
+\draw[dep] (fut.north) -- node[lbl, pos=0.22]{system price} (np.south west);
+\draw[dep] (data.north) -- node[lbl, pos=0.22]{price data} (np.south east);
+\draw[dep, dotted] (own) -- node[lbl, right]{ownership interest} (tsos.south -| own);
+\end{tikzpicture}
+\caption{Ecosystem map of the Nord Pool alliance. An arrow from A to B means that A depends on B, and a double arrow means mutual dependence \citep[notation after][Fig.~4.3]{OverbyAudestad2021}. Orange boxes are alliance partners, and dashed boxes are indirect stakeholders. Nord Pool depends on all TSOs for capacity data, while the TSOs depend on the shared SDAC coupling rather than on Nord Pool specifically.}
+\label{fig:ecosystem}
+\end{figure}

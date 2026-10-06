@@ -1,0 +1,52 @@
+% Figure 4: Stakeholder Relationship Model (notation after Øverby & Audestad, Fig. 19.3)
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  st/.style={draw, rounded corners=2pt, align=center, text width=2.6cm, minimum height=0.9cm, fill=white},
+  org/.style={st, fill=blue!8, draw=blue!60!black, line width=0.8pt},
+  grp/.style={st, double, double distance=1.2pt},
+  rel/.style={-{Stealth[length=2mm]}, thick, gray!65!black},
+  rel2/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]}, thick, gray!65!black},
+  ne/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]}, thick, red!65!black},
+  ne1/.style={-{Stealth[length=2mm]}, thick, red!65!black},
+  lbl/.style={font=\scriptsize, fill=white, inner sep=1pt, align=center}
+]
+% top row
+\node[st]  (eur)  at (-5.0,3.0) {Euronext};
+\node[st]  (reg)  at (-1.8,3.0) {Regulators};
+\node[st]  (tsoh) at (1.8,3.0)  {Owner TSOs\\(TSO Holding)};
+\node[grp] (ntso) at (5.0,3.0)  {Non-owner TSOs};
+% middle row
+\node[grp] (epex) at (-5.0,0.2) {EPEX SPOT /\\other NEMOs};
+\node[org] (np)   at (0,0.2)    {\textbf{Nord Pool}};
+\node[grp] (dat)  at (5.0,0.2)  {Data customers};
+% member row
+\node[grp] (sel)  at (-3.0,-2.2) {Sellers};
+\node[grp] (buy)  at (3.0,-2.2)  {Buyers};
+% bottom row
+\node[grp] (sml)  at (-5.2,-4.3) {Small participants};
+\node[grp] (cons) at (0.6,-4.3)  {Consumers};
+\node[grp] (fut)  at (5.2,-4.3)  {Futures traders};
+
+% relationships
+\draw[rel]  (eur.south)  -- node[lbl, pos=0.3, below left=1pt]{66\% ownership} (np.north west);
+\draw[rel]  (reg.south)  -- node[lbl, pos=0.4, left=2pt]{designation,\\supervision} (np.north);
+\draw[rel]  (tsoh.south) -- node[lbl, pos=0.4, left=2pt]{34\% ownership,\\capacity data} (np.north east);
+\draw[rel]  (ntso.south west) -- node[lbl, pos=0.3, below right=1pt]{capacity data} (np.east);
+\draw[rel2] (epex) -- node[lbl, above=2pt]{SDAC agreement;\\competition} (np);
+\draw[rel]  (dat) -- node[lbl, below=2pt]{licence fees} (np);
+\draw[rel]  (sel.north east) -- node[lbl, left=3pt]{fees, collateral} (np.south west);
+\draw[rel]  (buy.north west) -- node[lbl, right=3pt]{fees, collateral} (np.south east);
+\draw[rel]  (cons) -- node[lbl, right=2pt]{retail contracts} (buy.south west);
+
+% network effects
+\draw[ne]  (sel) -- node[lbl]{(+/+)} (buy);
+\draw[ne]  (sml) -- node[lbl, left=2pt]{(+/+)} (sel);
+\draw[ne1] (buy.north east) -- node[lbl, right=2pt]{(+/0)} (dat.south);
+\draw[ne]  (fut) -- node[lbl, right=2pt]{(+/+) spot--futures\\liquidity} (buy.south east);
+\draw[ne, red!50] (sel.north west) to[out=150,in=210, looseness=6] node[lbl, left]{($-$/$-$)} (sel.south west);
+\end{tikzpicture}
+\caption{Stakeholder Relationship Model. Double-bordered boxes are groups of similar stakeholders. Grey arrows show relationships (asset exchange, formal agreements), and red arrows show network effects using the SRM notation of \citet[Sect.~19.3]{OverbyAudestad2021}. The one-way effect of traders on data customers, (+/0), extends the textbook notation.}
+\label{fig:srm}
+\end{figure}

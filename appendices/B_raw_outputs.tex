@@ -1,0 +1,165 @@
+% =====================================================================
+% Appendix B: initial AI-generated text, pasted raw and unedited.
+% Tool: Claude (Anthropic), model claude-opus-5-5, Claude desktop app,
+% 5 October 2026. Prompts are reproduced in Appendix A.
+% =====================================================================
+\section*{Appendix B: Initial AI-generated text}
+\addcontentsline{toc}{section}{Appendix B: Initial AI-generated text}
+\label{app:B}
+
+The five outputs below are reproduced exactly as generated, without editing. All five were produced by Claude (Anthropic; model \texttt{claude-opus-5-5}; Claude desktop app) on 5 October 2026, in response to the context paragraph and prompts listed in Appendix~A. Each output is limited to a maximum of 400 words.
+
+% ---------------------------------------------------------------------
+\subsection*{B.1 Task 1: Business ecosystem}
+\label{app:B1}
+\begin{aiout}
+\textbf{Direct stakeholders}
+\begin{itemize}
+  \item \emph{Euronext (66\%)}: listed exchange group; brings trading technology, capital, clearing and commercial distribution. Since 2026 also runs Nordic power futures in the Nord Pool environment.
+  \item \emph{TSO Holding (34\%)}: today EPSO-G, Statnett and Svenska kraftnät. The TSOs supply the cross-zonal capacities the price calculation depends on, and operate the grid.
+  \item \emph{Non-owner TSOs} (Fingrid, Energinet, Elering, AST): still deliver capacities, but no longer own shares.
+  \item \emph{Market participants} (around 400 firms): generators, retailers, industrials, traders, aggregators.
+  \item \emph{Other NEMOs} (EPEX SPOT): competitor for members since 2020, partner in SDAC.
+  \item \emph{Regulators}: national regulators (NEMO designation), ACER, European Commission (CACM, REMIT).
+\end{itemize}
+\textbf{Indirect stakeholders}
+\begin{itemize}
+  \item Households and companies on spot-price contracts
+  \item Futures traders using the Nordic system price as reference
+  \item Data users (retailer apps, analysts, researchers)
+  \item The owner states (Norway, Sweden, Lithuania) and Euronext shareholders
+\end{itemize}
+\textbf{Key relationships}
+\begin{itemize}
+  \item Nord Pool $\leftrightarrow$ TSOs: mutual dependency. No capacities, no prices; no implicit auction, no efficient capacity allocation or congestion income for the TSOs.
+  \item Euronext $\leftrightarrow$ TSOs: complementary resources. Commercial and technology capabilities on one side, system knowledge, data and legitimacy on the other.
+  \item Nord Pool $\leftrightarrow$ EPEX: coopetition.
+  \item Spot $\leftrightarrow$ futures: the system price links the two markets.
+\end{itemize}
+\textbf{How the alliance changes roles and incentives}
+\begin{itemize}
+  \item Euronext's control introduces a profit motive: data products, new markets, futures.
+  \item TSOs move from owner-operators to minority shareholders; their influence increasingly comes through regulation and SDAC governance.
+  \item Possible conflict: Euronext wants to monetise price data and grow volumes; TSOs want transparent, low-cost price formation and security of supply.
+  \item Regulators become guardians of neutrality.
+\end{itemize}
+In short, the alliance turns Nord Pool into a hybrid between public infrastructure and a commercial platform.
+\end{aiout}
+
+% ---------------------------------------------------------------------
+\subsection*{B.2 Task 2: Network effects and path dependency}
+\label{app:B2}
+\begin{aiout}
+\textbf{Network effects}
+\begin{enumerate}
+  \item \emph{Cross-side (buyers $\leftrightarrow$ sellers)}: strong and positive. More sellers means better prices and execution for buyers, and vice versa (liquidity).
+  \item \emph{Same-side}: weakly negative among sellers (competition), but more participants overall give a more robust price.
+  \item \emph{Market coupling}: each new bidding zone or interconnector increases the set of feasible trades and welfare. However, the coupling (SDAC) is shared by all NEMOs, so this effect is not exclusive to Nord Pool.
+  \item \emph{Data network effect}: more trades, richer price history, more valuable data products.
+  \item \emph{Spot--futures}: a liquid spot market makes the system price a credible reference, which supports futures liquidity, which attracts more spot participation.
+\end{enumerate}
+\textbf{Does value grow as more join?} Yes, particularly with new zones, flexible small participants and complementary services (futures, data). The marginal value of one more large Nordic member is smaller.
+
+\textbf{Path dependency and lock-in}
+\begin{itemize}
+  \item First mover since 1996; the Nordic system price became the reference for most Nordic financial contracts, a de facto standard.
+  \item Switching costs for members: IT/API integration, collateral, trained staff, historical data.
+  \item Sunk costs and learning effects in market design reinforce the Nordic model.
+\end{itemize}
+\textbf{Tipping / winner-takes-all}
+\begin{itemize}
+  \item Before 2020 the Nordic spot market had tipped to Nord Pool.
+  \item CACM's multi-NEMO model (2020) and harmonised products (e.g.\ the 15-minute MTU) lower switching costs between exchanges; EPEX has entered.
+  \item Result: a contestable incumbent rather than a locked-in monopoly in the spot market.
+  \item Lock-in may be moving to the system price, data and futures, where Euronext controls the full chain.
+\end{itemize}
+Overall: strong liquidity network effects and path dependence, but regulation limits winner-takes-all dynamics in the spot market.
+\end{aiout}
+
+% ---------------------------------------------------------------------
+\subsection*{B.3 Task 3: Multisided platform and pricing}
+\label{app:B3}
+\begin{aiout}
+\textbf{Sides}
+\begin{itemize}
+  \item Sellers (generators) and buyers (retailers, industrials), often the same firms in different hours.
+  \item Small participants and aggregators.
+  \item Data customers.
+  \item Indirectly: futures traders via the system price.
+\end{itemize}
+\textbf{Network effects}
+\begin{itemize}
+  \item Buyers $\leftrightarrow$ sellers: strong positive cross-side effects (liquidity).
+  \item Traders $\rightarrow$ data customers: positive, one-way.
+  \item Sellers $\leftrightarrow$ sellers: weakly negative same-side effect (competition).
+\end{itemize}
+\textbf{Pricing model (2026 fee schedule, Nordic/Baltic)}
+\begin{itemize}
+  \item Annual fee: €21,500 for day-ahead + intraday; Small Participants €0 fixed fee (but €3,000 minimum per year).
+  \item Day-ahead variable fee: €0.040/MWh trading + €0.015/MWh clearing; small participants €0.125 + €0.015.
+  \item Intraday continuous: €0.109/MWh + €0.015 clearing.
+  \item Caps: fixed fees max €65,000 per entity; clearing max €375,000 per member and country.
+  \item Data: e.g.\ retailer licence €3,500/yr; historical data €600/yr.
+\end{itemize}
+\textbf{Who pays and who is subsidised}
+\begin{itemize}
+  \item Buyers and sellers pay the same fees, so there is no free side.
+  \item Small participants are subsidised on entry (no fixed fee) to grow the long tail and add depth.
+  \item The largest members get implicit volume discounts through the caps, rewarding liquidity providers.
+  \item Data customers and mid-sized members are the main ``money side''.
+  \item TSOs do not pay; they supply capacities and receive congestion income.
+\end{itemize}
+Fees are tiny relative to power prices (about 0.15\% of an average price of about €36/MWh), so pricing is about participation, not consumer prices.
+\end{aiout}
+
+% ---------------------------------------------------------------------
+\subsection*{B.4 Task 4: Cybersecurity economics}
+\label{app:B4}
+\begin{aiout}
+\textbf{Allocation of responsibility}
+
+Security on Nord Pool is a joint good; it should not be treated as one partner's IT budget.
+\begin{itemize}
+  \item \emph{Nord Pool/Euronext}: responsible for the core trading, clearing and data systems, the ``best-shot'' layer where one strong defender protects everyone. Euronext can bring group-level security operations, threat intelligence and resilience standards.
+  \item \emph{TSOs}: responsible for the integrity and availability of capacity data and their own grid IT/OT; a corrupted capacity file would distort prices across zones.
+  \item \emph{Members}: responsible for their own trading systems and credentials, a weakest-link surface with around 400 firms.
+  \item \emph{Shared}: incident response and fallback procedures within market coupling (SDAC), market surveillance.
+\end{itemize}
+\textbf{Investment logic}
+
+Each partner invests against its own losses, but losses from an outage or manipulation also fall on consumers, clients and society. Private optima therefore sum to less than the socially efficient level. Instruments to close the gap: regulation (NIS2 lists NEMOs; the EU Network Code on Cybersecurity; Norway's Digital Security Act from October 2025), SLAs with penalties between Nord Pool and the TSOs, collateral requirements for members, joint exercises and cyber insurance. A reasonable approach is to allocate investment roughly in proportion to control over each attack surface rather than ownership share.
+
+\textbf{Domestic hosting}
+
+Hosting in the Nordics would not by itself make the platform more secure: the weakest links are interfaces, credentials and capacity data, not the data-centre location. Jurisdiction matters for legal access, but Euronext is EU-based. Resilience (redundant sites, tested fallbacks) matters more than geography.
+\end{aiout}
+
+% ---------------------------------------------------------------------
+\subsection*{B.5 Task 5: Business Model Canvas and SRM}
+\label{app:B5}
+\begin{aiout}
+\textbf{Business Model Canvas: Nord Pool}
+\begin{itemize}
+  \item \emph{Key partners}: Euronext, TSOs (Statnett, Svenska kraftnät, EPSO-G and the other coupling TSOs), other NEMOs (SDAC), regulators, banks, IT suppliers
+  \item \emph{Key activities}: day-ahead auction, intraday trading, system price calculation, clearing and settlement, market surveillance, data services
+  \item \emph{Key resources}: NEMO designations, trading/clearing platforms, historical price data, system price reference status, staff, member trust
+  \item \emph{Value propositions}: liquid, neutral and secure price formation with guaranteed settlement; reference price for the Nordic market; reliable data
+  \item \emph{Customer relationships}: membership agreements, market support desk, training (Nord Pool Academy), APIs
+  \item \emph{Channels}: trading platform, APIs, data portal, clearing
+  \item \emph{Customer segments}: generators, retailers, industrials, traders, small participants/aggregators, data customers, TSOs (auction services)
+  \item \emph{Cost structure}: IT and platform development, staff, compliance and surveillance, clearing risk capital
+  \item \emph{Revenue streams}: annual membership fees, trading and clearing fees per MWh, data licences, consulting/training, futures (via Euronext)
+\end{itemize}
+\textbf{Stakeholder Relationship Model (text form)}
+\begin{itemize}
+  \item Euronext --(66\% ownership)$\rightarrow$ Nord Pool; TSO Holding --(34\% ownership)$\rightarrow$ Nord Pool
+  \item TSOs --(capacity data)$\rightarrow$ Nord Pool; Nord Pool --(congestion income via SDAC)$\rightarrow$ TSOs
+  \item Sellers $\leftrightarrow$ Buyers: (+/+) network effect
+  \item Sellers $\leftrightarrow$ Sellers: ($-$/$-$) competition
+  \item Members --(fees, collateral)$\rightarrow$ Nord Pool
+  \item Data customers --(licence fees)$\rightarrow$ Nord Pool; traders $\rightarrow$ data customers: positive one-way effect
+  \item Nord Pool $\leftrightarrow$ EPEX: SDAC cooperation / competition
+  \item Regulators --(NEMO designation, supervision)$\rightarrow$ Nord Pool
+  \item Spot $\leftrightarrow$ futures liquidity: (+/+)
+\end{itemize}
+\end{aiout}

@@ -1,0 +1,99 @@
+% =====================================================================
+% TTM4165 Digital Economics: Case Study
+% Nord Pool: the Euronext–TSO alliance behind the Nordic power price
+% Compile with pdfLaTeX + BibTeX (Overleaf default works).
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}\usepackage{microtype}}{\usepackage[expansion=false]{microtype}}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.12}
+\usepackage{parskip}
+
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,skip=6pt}
+\usepackage{enumitem}
+\setlist{itemsep=1pt,topsep=3pt}
+\usepackage{csquotes}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,fit,calc,backgrounds}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+% Box for raw AI output (Appendix B)
+\newtcolorbox{aiout}{breakable,colback=gray!4,colframe=gray!55,boxrule=0.5pt,
+  arc=1pt,left=6pt,right=6pt,top=4pt,bottom=4pt,fontupper=\small}
+% Box for prompts (Appendix A)
+\newtcolorbox{promptbox}{breakable,colback=blue!3,colframe=blue!40!gray,boxrule=0.4pt,
+  arc=1pt,left=6pt,right=6pt,top=3pt,bottom=3pt,fontupper=\small\ttfamily}
+
+\usepackage[round,authoryear]{natbib}
+\setlength{\bibsep}{3pt}
+\renewcommand{\bibsection}{\section*{References}\addcontentsline{toc}{section}{References}}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\urlstyle{same}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% ---------------------------------------------------------------------
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{2.5cm}
+  {\large TTM4165 Digital Economics, Autumn 2026\par}
+  \vspace{0.6cm}
+  {\Large\bfseries Case Study\par}
+  \vspace{0.4cm}
+  {\LARGE\bfseries Who Owns the Price?\par}
+  \vspace{0.3cm}
+  {\Large Nord Pool and the Euronext--TSO Alliance\\behind the Nordic Power Market\par}
+  \vspace{1.5cm}
+  {\large Group XX\par}
+  \vspace{0.3cm}
+  {[Name 1] \quad [Name 2] \quad [Name 3] \quad [Name 4]\par}
+  \vfill
+  {Checkpoint submission, 9 October 2026\par}
+  \vspace{0.3cm}
+  {\small Main text: approx.\ 4\,800 words (excluding tables, figures, references and appendices).\\
+  Peer-reviewed sources: 12.\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\input{sections/01_introduction}
+\input{sections/02_analysis}
+\input{sections/03_conclusion}
+
+\input{sections/04_ai_declaration}
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\newpage
+\input{appendices/A_ai_log}
+
+\newpage
+\input{appendices/B_raw_outputs}
+
+\newpage
+\input{appendices/C_reflection}
+
+\end{document}
