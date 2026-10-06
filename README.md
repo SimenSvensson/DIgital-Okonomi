@@ -18,7 +18,8 @@ Full draft of the 9 October checkpoint. It compiles on Overleaf with pdfLaTeX + 
 
 ## Before submitting
 
-- [ ] Fill in the group number and names on the title page (`main.tex`).
+- [x] Fill in the group number and names on the title page (`main.tex`).
+- [ ] Add the official NTNU logo as `figures/ntnu_logo.pdf` (Innsida > Logo og maler). Until then the title page shows a text placeholder.
 - [ ] Rewrite the text in your own words. That's the TA condition for AI-drafted text.
 - [ ] Check that the "Declaration of AI use" (`sections/04_ai_declaration.tex`) matches what you actually did.
 - [ ] Upload the NTNU AI declaration form in Inspera.

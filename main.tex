@@ -23,6 +23,7 @@
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage[table]{xcolor}
+\definecolor{ntnublue}{HTML}{00509E} % NTNU profile blue
 \usepackage{caption}
 \captionsetup{font=small,labelfont=bf,skip=6pt}
 \usepackage{enumitem}
@@ -45,6 +46,9 @@
 \setlength{\bibsep}{3pt}
 \renewcommand{\bibsection}{\section*{References}\addcontentsline{toc}{section}{References}}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Who Owns the Price? Nord Pool and the Euronext-TSO Alliance},
+  pdfauthor={Portfolio Group 150: Bjørn Solli Moxnes, Magnus Lauritzen Molberg, Maran Shanmugathas, Simen Svensson},
+  pdfsubject={TTM4165 Digital Economics, NTNU}}
 \usepackage{xurl}
 \urlstyle{same}
 
@@ -55,24 +59,44 @@
 \begin{document}
 
 \begin{titlepage}
+  % Title page laid out after NTNU's visual identity: NTNU logo top left,
+  % NTNU blue (#00509E) accents, institution and course details.
+  % Put the official logo (Innsida > Logo og maler) at figures/ntnu_logo.pdf.
+  \IfFileExists{figures/ntnu_logo.pdf}%
+    {\includegraphics[height=1.5cm]{figures/ntnu_logo.pdf}}%
+    {{\sffamily\bfseries\Huge\color{ntnublue}NTNU}\\[2pt]
+     {\sffamily\small\color{ntnublue}Norwegian University of Science and Technology}}
+  \par\vspace{0.4cm}
+  {\color{ntnublue}\rule{\textwidth}{1.2pt}}
+  \vspace{2.5cm}
+
   \centering
-  \vspace*{2.5cm}
   {\large TTM4165 Digital Economics, Autumn 2026\par}
   \vspace{0.6cm}
   {\Large\bfseries Case Study\par}
   \vspace{0.4cm}
-  {\LARGE\bfseries Who Owns the Price?\par}
+  {\LARGE\bfseries\color{ntnublue} Who Owns the Price?\par}
   \vspace{0.3cm}
   {\Large Nord Pool and the Euronext--TSO Alliance\\behind the Nordic Power Market\par}
   \vspace{1.5cm}
-  {\large Group XX\par}
-  \vspace{0.3cm}
-  {[Name 1] \quad [Name 2] \quad [Name 3] \quad [Name 4]\par}
+  {\large Portfolio Group 150\par}
+  \vspace{0.4cm}
+  {\begin{tabular}{c}
+    Bjørn Solli Moxnes\\
+    Magnus Lauritzen Molberg\\
+    Maran Shanmugathas\\
+    Simen Svensson
+  \end{tabular}\par}
   \vfill
   {Checkpoint submission, 9 October 2026\par}
   \vspace{0.3cm}
   {\small Main text: approx.\ 4\,800 words (excluding tables, figures, references and appendices).\\
   Peer-reviewed sources: 12.\par}
+  \vspace{0.8cm}
+  {\color{ntnublue}\rule{\textwidth}{0.6pt}}\\[4pt]
+  {\small Department of Information Security and Communication Technology\\
+  Faculty of Information Technology and Electrical Engineering\\
+  Norwegian University of Science and Technology (NTNU), Trondheim\par}
 \end{titlepage}
 
 \tableofcontents
