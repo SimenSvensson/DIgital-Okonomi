@@ -26,7 +26,7 @@
 \node[box]     (mem) at (-5.5,-1.4) {\textbf{Market participants}\\(about 400 firms)};
 
 % right column: all TSOs
-\node[partner] (tso)  at (5.5,0.9)  {\textbf{Owner TSOs} (34\%)\\Statnett, Svenska\\kraftnät, EPSO-G};
+\node[partner] (tso)  at (5.5,0.9)  {\textbf{Owner TSOs} (34\%)\\Statnett,\\Svenska kraftnät,\\Litgrid (via EPSO-G)};
 \node[box]     (ntso) at (5.5,-1.4) {\textbf{Non-owner TSOs}\\Fingrid, Energinet, \dots};
 \begin{scope}[on background layer]
   \node[draw=orange!60!black, dotted, rounded corners=4pt, inner sep=5pt, fit=(tso)(ntso)] (tsos) {};
@@ -40,7 +40,7 @@
 
 % dependencies: A -> B means "A depends on B"
 \draw[mut] (eur) -- node[lbl, above=2pt]{ownership $\leftrightarrow$\\technology, capital} (np);
-\draw[dep] (np) -- node[lbl, above=2pt]{capacity data\\(from all TSOs)} (tso);
+\draw[dep] (np) -- node[lbl, above=2pt]{capacity data for\\area prices (all TSOs)} (tso);
 \draw[dep] (ntso) -- node[lbl, above=2pt]{depend on\\coupling} (ntso -| sdac.east);
 \draw[mut] (mem) -- node[lbl, above=2pt]{liquidity $\leftrightarrow$\\settlement} (mem -| sdac.west);
 \draw[dep] (np) -- node[lbl, right]{designation} (reg);
@@ -49,6 +49,6 @@
 \draw[dep] (data.north) -- node[lbl, pos=0.22]{price data} (np.south east);
 \draw[dep, dotted] (own) -- node[lbl, right]{ownership interest} (tsos.south -| own);
 \end{tikzpicture}
-\caption{Ecosystem map of the Nord Pool alliance. An arrow from A to B means that A depends on B, and a double arrow means mutual dependence \citep[notation after][Fig.~4.3]{OverbyAudestad2021}. Orange boxes are alliance partners, and dashed boxes are indirect stakeholders. Nord Pool depends on all TSOs for capacity data, while the TSOs depend on the shared SDAC coupling rather than on Nord Pool specifically.}
+\caption{Ecosystem map of the Nord Pool alliance. An arrow from A to B means that A depends on B, and a double arrow means mutual dependence \citep[notation after][Fig.~4.3]{OverbyAudestad2021}. Orange boxes are alliance partners, and dashed boxes are indirect stakeholders. Nord Pool depends on all TSOs for the capacity data behind the area prices, while the TSOs depend on the shared SDAC coupling rather than on Nord Pool specifically.}
 \label{fig:ecosystem}
 \end{figure}

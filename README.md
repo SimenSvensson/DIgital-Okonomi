@@ -14,9 +14,9 @@ Full draft of the 9 October checkpoint. Built on the NTNU project template (Jon 
 
 ## Word counts (approximate)
 
-- Main text (sections 1–3, excluding tables and figures): about 4,800. The target for a group of 4 is about 5,000 ±10%.
+- Main text (sections 1–3, excluding tables and figures): about 5,200 after the review fixes. The target for a group of 4 is about 5,000 ±10%.
 - Each Appendix B output: 200–265 words (the limit is 400).
-- Closing reflection: about 370 words (the range is 250–400).
+- Closing reflection: about 390 words (the range is 250–400).
 
 ## Before submitting
 
