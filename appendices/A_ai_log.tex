@@ -117,6 +117,12 @@ or changing one actor affects others in the ecosystem
 \citep[Sect.~4.1]{OverbyAudestad2021}.
 We added EEX to Table~\ref{tab:stakeholders}.
 
+\textbf{Still unverified.} The TSOs' actual objectives in
+the alliance and the employers of four board members are not
+public. We would need TSO Holding's shareholder agreement or
+the owners' annual reports before treating any claim about
+TSO motives as fact.
+
 \textbf{Reflection.} The output was useful as a fast,
 well-structured first list of stakeholders.
 It failed where judgement was needed: it treated an
@@ -190,6 +196,11 @@ and the open-interest figures for Euronext and EEX
 \citep{Euronext2026,EEX2026}.
 We also classified the effects in Table~\ref{tab:ne},
 which the output did only partly.
+
+\textbf{Still unverified.} We have EPEX's Nordic volume for
+one year only, so we cannot tell whether its share is
+growing. Multi-year volumes per exchange would be needed to
+judge whether the spot market is tipping back.
 
 \textbf{Reflection.} The list of effects was a usable
 checklist. Its weakness was confident claims without
@@ -265,6 +276,12 @@ costs under CACM \citep{CACM2015}.
 fees in the capacity-provider role from contributions
 to the coupling infrastructure.
 
+\textbf{Still unverified.} Who finances whom cannot be
+confirmed without Nord Pool's revenue broken down by
+customer group, which it does not publish. Confirming
+whether the €600 historical-data price still applies in 2026
+would require Nord Pool's current price list.
+
 \textbf{Reflection.}
 The output reproduced several sourced prices accurately
 but blurred the distinction between platform sides
@@ -338,6 +355,12 @@ Following the revised platform classification,
 Small Participants are discussed as a tariff segment
 within the trading sides rather than a separate
 subsidised platform side.
+
+\textbf{Still unverified.} How security operations are split
+between Nord Pool and Euronext, and where the systems are
+hosted, would require disclosures from the companies
+themselves; our cost and loss levels therefore remain
+illustrative.
 
 \textbf{Reflection.}
 The output was cautious and well structured,
@@ -424,6 +447,11 @@ Being included in an SRM does not imply being a side
 of the core MSP
 \citep[Def.~10.1 and Sect.~19.3]{OverbyAudestad2021}.
 
+\textbf{Still unverified.} The split of futures revenue
+between Euronext and Nord Pool, and the size of each cost
+item, would require segment figures from Euronext's or Nord
+Pool's annual reports.
+
 \textbf{Reflection.}
 The canvas was a complete first checklist.
 It reproduced the weakness of writing a canvas
@@ -481,3 +509,85 @@ The original five task outputs in Appendix~B
 remain unchanged.
 The supplementary requests and responses
 are retained in the review conversation.
+
+% ---------------------------------------------------------------------
+\subsubsection*{A.7 AI-drafted report text}
+\label{app:A7}
+
+\textbf{Tool:} Claude, \texttt{claude-opus-5-5}, Claude
+desktop app, 5~October 2026. \quad \textbf{Use:} first draft
+of the main text, tables and figures, produced after the
+five task prompts above and from the same research notes.
+The draft is not reproduced, because the revised text
+replaces it.
+
+\textbf{Claims checked.} We checked the draft's claims and
+references against the cited sources and the textbook. All
+textbook references and all twelve peer-reviewed sources
+were correct. The review found the following errors.
+
+\textbf{Error 1: price calculations not distinguished.} The
+draft stated that Nord Pool cannot calculate a price without
+the TSOs' capacity data, and treated the system price as
+co-produced from TSO data in the same way as the area
+prices. Nord Pool calculates the system price without
+congestion restrictions, with capacities set to infinity,
+while flows between the Nordics and surrounding markets from
+the area-price calculation still enter it as import or
+export orders \citep{NPPrice}. Our first correction
+overstated the opposite case (see A.1, Error~1, and A.6).
+\emph{Correction:} Sections~\ref{sec:t1} and~\ref{sec:t5}
+now distinguish the two calculations.
+
+\textbf{Error 2: futures platform and revenue.} The draft
+repeated the claim from Appendix~B.1 that the futures were
+relaunched ``in the Nord Pool environment'', and claimed
+that futures revenue accrues to Euronext rather than Nord
+Pool. The press release says the futures trade on Optiq and
+clear on Euronext Clearing, with Nord Pool providing the
+underlying prices, and says nothing about the revenue split
+\citep{Euronext2026}. \emph{Correction:}
+Sections~\ref{sec:t1} and~\ref{sec:t5}, and
+Figure~\ref{fig:bmc}.
+
+\textbf{Error 3: assumptions stated as fact.} The draft
+stated that Nord Pool runs its core engine ``with support
+from Euronext's group capabilities'', which no source
+describes (see A.4, Error~3). It also stated that the free
+ENTSO-E platform ``caps'' what Nord Pool can charge,
+although \citet{ERR2022} only reports that the same data are
+free there. \emph{Correction:} the first is labelled as our
+assumption (Section~\ref{sec:t4}), and the second is stated
+only as a possible constraint (Section~\ref{sec:t3}).
+
+\textbf{Error 4: overstated causality.} The conclusion
+claimed that multi-NEMO competition ``keeps trading fees
+low'', although Task~2 states that we cannot establish
+causality. \emph{Correction:} the conclusion is hedged.
+
+\textbf{Error 5: misattributed theory.} The pass-through
+argument was attributed to \citet{RochetTirole2003}, but it
+comes from their later (2006) work. \emph{Correction:}
+Section~\ref{sec:t3} no longer makes the pass-through
+argument and cites the 2003 paper only for the general logic
+of platform pricing.
+
+\textbf{Error 6: misreading the textbook and the task.} The
+draft listed three value generation blocks, but the textbook
+lists four: key partners, key activities, key resources and
+cost structure \citep[Sect.~19.2]{OverbyAudestad2021}. It
+also discussed blocks beyond the four the task asks us to
+analyse, and never named the sunk costs and learning effects
+that Task~2 lists. It called EPSO-G a TSO (see A.1, Error~3)
+and labelled Nord Pool AS as an alliance partner in
+Table~\ref{tab:cyber}, although it is the platform.
+\emph{Correction:} Sections~\ref{sec:t2}, \ref{sec:t4}
+and~\ref{sec:t5}.
+
+\textbf{Reflection.} The draft was fluent and well
+referenced, which made its errors harder to see. Most were
+not invented facts but small overstatements of what a real
+source says. Catching them required reading the sources
+themselves, not only checking that each citation existed.
+Error~1 shows that our own corrections needed the same
+check.
