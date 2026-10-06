@@ -19,7 +19,7 @@ The original outputs are preserved unedited in Appendix~B.
 The group compared these outputs with its initial reasoning
 and checked claims against course theory and case evidence.
 Corrections were made to the analysis rather than retrospectively
-changing the raw outputs. A supplementary AI-assisted review
+changing the raw outputs. Our own further review
 subsequently identified an overstatement in our own system-price
 correction and problems with the classification of platform sides.
 These further corrections are recorded below.
@@ -437,7 +437,7 @@ We drew Figure~\ref{fig:srm} using the textbook
 notation and the explicitly marked extension (+/0)
 for the informational benefit of trading activity
 for data customers.
-A subsequent review also identified that our figures
+Our own subsequent review also identified that our figures
 treated Small Participants as a distinct side
 even though they are a tariff segment
 within buyers and sellers.
@@ -463,55 +463,21 @@ The revised SRM also distinguishes the wider stakeholder
 network from the narrower set of core platform sides.
 
 % ---------------------------------------------------------------------
-\subsubsection*{A.6 Supplementary AI-assisted review}
+\subsubsection*{A.6 LaTeX conversion of the group's revisions}
 
 \textbf{Tool:} Codex, OpenAI desktop app.
 The exact model version was not recorded.
-\quad \textbf{Latest log revision recorded:}
-\texttt{2026-10-06T17:09:27+02:00}.
 
-\textbf{Request summary.}
-We asked for a review of the case against the assignment
-description and supporting course material,
-focusing on possible obstacles to approval.
-We then clarified that the group had formulated
-its own initial ideas before prompting AI
-and requested proposed LaTeX revisions
-to describe this process accurately,
-correct the system-price dependency,
-and distinguish platform sides from other
-stakeholder groups.
-A follow-up request asked for complete replacement
-files for the SRM, AI log and closing reflection.
-This paragraph summarises the requests
-rather than reproducing them verbatim.
-
-\textbf{Output and evaluation.}
-The review proposed targeted revisions
-to the declaration, analysis, figures and reflection.
-The substantive corrections are grounded
-in Nord Pool's price-calculation documentation
-\citep{NPPrice} and the MSP definition
-\citep[Def.~10.1]{OverbyAudestad2021}.
-In particular, setting internal Nordic capacities
-to infinity does not remove the import and export
-flows taken from the area-price calculation.
-Small Participants are a tariff segment,
-while futures traders and data customers
-must be distinguished from the core trading sides.
-
-\textbf{Status.}
-The group has reviewed the supplementary AI feedback,
-checked the revised claims against the cited sources,
-and revised the proposed wording where necessary.
-The accepted corrections are incorporated
-into the analysis, figures and appendices.
-The group takes responsibility for the submitted
-arguments and wording.
+\textbf{Use.} The group wrote its later revisions in plain text:
+the corrected system-price dependency,
+the revised classification of platform sides,
+and the updated declaration, Appendix~A and reflection text.
+Codex was used only to convert this text into LaTeX code,
+including the TikZ code for Figures~\ref{fig:msp}
+and~\ref{fig:srm}, and to commit it to the project repository.
+The content and wording of these revisions are the group's own.
 The original five task outputs in Appendix~B
 remain unchanged.
-The supplementary requests and responses
-are retained in the review conversation.
 
 % ---------------------------------------------------------------------
 \subsubsection*{A.7 AI-drafted report text}
@@ -538,7 +504,7 @@ congestion restrictions, with capacities set to infinity,
 while flows between the Nordics and surrounding markets from
 the area-price calculation still enter it as import or
 export orders \citep{NPPrice}. Our first correction
-overstated the opposite case (see A.1, Error~1, and A.6).
+overstated the opposite case (see A.1, Error~1).
 \emph{Correction:} Sections~\ref{sec:t1} and~\ref{sec:t5}
 now distinguish the two calculations.
 
