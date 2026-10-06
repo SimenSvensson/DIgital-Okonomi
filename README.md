@@ -1,13 +1,15 @@
 # TTM4165 Case Study: Nord Pool (Euronext × TSO alliance)
 
-Full draft of the 9 October checkpoint. It compiles on Overleaf with pdfLaTeX + BibTeX (the default settings).
+Full draft of the 9 October checkpoint. Built on the NTNU project template (Jon Arnt Kårstad, NTNU IMT). It compiles on Overleaf with pdfLaTeX + Biber (Overleaf picks Biber automatically).
 
 ## Structure
 
-- `main.tex`: preamble, title page and the order required by the course (1 Introduction, 2 Analysis with Tasks 1–5, 3 Conclusion, References, Appendix A, Appendix B, Closing Group Reflection)
-- `sections/`: introduction, analysis (Tasks 1–5), conclusion, declaration of AI use
-- `appendices/`: A (AI use log), B (raw AI outputs), C (closing group reflection)
-- `figures/`: TikZ figures (ecosystem, MSP, SRM) and the Business Model Canvas made in the course template (`bmc_nordpool.pptx` exported to `bmc_nordpool.pdf`)
+- `main.tex`: document skeleton in the template's order (title page, roman-numbered contents and lists of figures/tables, then the order required by the course (1 Introduction, 2 Analysis with Tasks 1–5, 3 Conclusion, References, Appendix A, Appendix B, Closing Group Reflection))
+- `packages.sty`: the template's settings (page setup, header/footer, biblatex author-year), plus the packages this report needs
+- `title.tex`: the template's NTNU title page, filled in
+- `Sections/`: introduction, analysis (Tasks 1–5), conclusion, declaration of AI use
+- `Appendices/`: A (AI use log), B (raw AI outputs), C (closing group reflection)
+- `Images/`: NTNU logo, TikZ figures (ecosystem, MSP, SRM) and the Business Model Canvas made in the course template (`bmc_nordpool.pptx` exported to `bmc_nordpool.pdf`)
 - `references.bib`: 12 peer-reviewed sources (DOIs checked) plus case and regulatory sources
 
 ## Word counts (approximate)
@@ -18,9 +20,8 @@ Full draft of the 9 October checkpoint. It compiles on Overleaf with pdfLaTeX + 
 
 ## Before submitting
 
-- [x] Fill in the group number and names on the title page (`main.tex`).
-- [ ] Add the official NTNU logo as `figures/ntnu_logo.pdf` (Innsida > Logo og maler). Until then the title page shows a text placeholder.
+- [x] Fill in the group number and names on the title page (`title.tex`).
 - [ ] Rewrite the text in your own words. That's the TA condition for AI-drafted text.
-- [ ] Check that the "Declaration of AI use" (`sections/04_ai_declaration.tex`) matches what you actually did.
+- [ ] Check that the "Declaration of AI use" (`Sections/04_ai_declaration.tex`) matches what you actually did.
 - [ ] Upload the NTNU AI declaration form in Inspera.
-- [ ] Update the word count on the title page if it changes.
+- [ ] Update the word count on the title page (`title.tex`) if it changes.

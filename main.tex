@@ -1,123 +1,52 @@
-% =====================================================================
-% TTM4165 Digital Economics: Case Study
+% Author - Jon Arnt Kårstad, NTNU IMT (NTNU project template)
+% TTM4165 Digital Economics: Case Study, Portfolio Group 150
 % Nord Pool: the Euronext–TSO alliance behind the Nordic power price
-% Compile with pdfLaTeX + BibTeX (Overleaf default works).
-% =====================================================================
-\documentclass[11pt,a4paper]{article}
+% Compile with pdfLaTeX + Biber (Overleaf picks Biber automatically).
+\documentclass{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\IfFileExists{lmodern.sty}{\usepackage{lmodern}\usepackage{microtype}}{\usepackage[expansion=false]{microtype}}
-\usepackage{textcomp}
-\usepackage[english]{babel}
-\usepackage[margin=2.5cm]{geometry}
-\usepackage{setspace}
-\setstretch{1.12}
-\usepackage{parskip}
+% Importing document settings from our file "packages.sty"
+\usepackage{packages}
 
-\usepackage{graphicx}
-\usepackage{rotating}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{longtable}
-\usepackage[table]{xcolor}
-\definecolor{ntnublue}{HTML}{00509E} % NTNU profile blue
-\usepackage{caption}
-\captionsetup{font=small,labelfont=bf,skip=6pt}
-\usepackage{enumitem}
-\setlist{itemsep=1pt,topsep=3pt}
-\usepackage{csquotes}
-
-\usepackage{tikz}
-\usetikzlibrary{positioning,arrows.meta,shapes.geometric,fit,calc,backgrounds}
-
-\usepackage{tcolorbox}
-\tcbuselibrary{breakable}
-% Box for raw AI output (Appendix B)
-\newtcolorbox{aiout}{breakable,colback=gray!4,colframe=gray!55,boxrule=0.5pt,
-  arc=1pt,left=6pt,right=6pt,top=4pt,bottom=4pt,fontupper=\small}
-% Box for prompts (Appendix A)
-\newtcolorbox{promptbox}{breakable,colback=blue!3,colframe=blue!40!gray,boxrule=0.4pt,
-  arc=1pt,left=6pt,right=6pt,top=3pt,bottom=3pt,fontupper=\small\ttfamily}
-
-\usepackage[round,authoryear]{natbib}
-\setlength{\bibsep}{3pt}
-\renewcommand{\bibsection}{\section*{References}\addcontentsline{toc}{section}{References}}
-\usepackage[hidelinks]{hyperref}
-\hypersetup{pdftitle={Who Owns the Price? Nord Pool and the Euronext-TSO Alliance},
-  pdfauthor={Portfolio Group 150: Bjørn Solli Moxnes, Magnus Lauritzen Molberg, Maran Shanmugathas, Simen Svensson},
-  pdfsubject={TTM4165 Digital Economics, NTNU}}
-\usepackage{xurl}
-\urlstyle{same}
-
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-
-% ---------------------------------------------------------------------
+% Beginning of document
 \begin{document}
 
-\begin{titlepage}
-  % Title page laid out after NTNU's visual identity: NTNU logo top left,
-  % NTNU blue (#00509E) accents, institution and course details.
-  % Put the official logo (Innsida > Logo og maler) at figures/ntnu_logo.pdf.
-  \IfFileExists{figures/ntnu_logo.pdf}%
-    {\includegraphics[height=1.5cm]{figures/ntnu_logo.pdf}}%
-    {{\sffamily\bfseries\Huge\color{ntnublue}NTNU}\\[2pt]
-     {\sffamily\small\color{ntnublue}Norwegian University of Science and Technology}}
-  \par\vspace{0.4cm}
-  {\color{ntnublue}\rule{\textwidth}{1.2pt}}
-  \vspace{2.5cm}
+% Inserting title page
+\import{./}{title}
 
-  \centering
-  {\large TTM4165 Digital Economics, Autumn 2026\par}
-  \vspace{0.6cm}
-  {\Large\bfseries Case Study\par}
-  \vspace{0.4cm}
-  {\LARGE\bfseries\color{ntnublue} Who Owns the Price?\par}
-  \vspace{0.3cm}
-  {\Large Nord Pool and the Euronext--TSO Alliance\\behind the Nordic Power Market\par}
-  \vspace{1.5cm}
-  {\large Portfolio Group 150\par}
-  \vspace{0.4cm}
-  {\begin{tabular}{c}
-    Bjørn Solli Moxnes\\
-    Magnus Lauritzen Molberg\\
-    Maran Shanmugathas\\
-    Simen Svensson
-  \end{tabular}\par}
-  \vfill
-  {Checkpoint submission, 9 October 2026\par}
-  \vspace{0.3cm}
-  {\small Main text: approx.\ 4\,800 words (excluding tables, figures, references and appendices).\\
-  Peer-reviewed sources: 12.\par}
-  \vspace{0.8cm}
-  {\color{ntnublue}\rule{\textwidth}{0.6pt}}\\[4pt]
-  {\small Department of Information Security and Communication Technology\\
-  Faculty of Information Technology and Electrical Engineering\\
-  Norwegian University of Science and Technology (NTNU), Trondheim\par}
-\end{titlepage}
+% Defining front matter settings (Norsk: innstillinger for forord m.m.)
+\frontmatter
 
+% Inserting table of contents
 \tableofcontents
+
+% Inserting list of figures & list of tables
+\listoffigures
+\listoftables
+
+% Defining main matter settings (Norsk: innstillinger for hoveddelen av teksten)
+\mainmatter
+
+% Order required by the course: 1 Introduction, 2 Analysis (Tasks 1-5),
+% 3 Conclusion, References, Appendix A, Appendix B, Closing Group Reflection
+\import{./Sections/}{01_introduction}
+\import{./Sections/}{02_analysis}
+\import{./Sections/}{03_conclusion}
+
+\import{./Sections/}{04_ai_declaration}
+
+% Printing bibliography
 \newpage
+\printbibliography[heading = bibintoc, title = References]    % 'bibintoc' inserts our bibliography into the table of contents
 
-\input{sections/01_introduction}
-\input{sections/02_analysis}
-\input{sections/03_conclusion}
-
-\input{sections/04_ai_declaration}
-
-\bibliographystyle{apalike}
-\bibliography{references}
+% Inserting appendices with separate settings
+\addappendix
+\import{./Appendices/}{A_ai_log}
 
 \newpage
-\input{appendices/A_ai_log}
+\import{./Appendices/}{B_raw_outputs}
 
 \newpage
-\input{appendices/B_raw_outputs}
+\import{./Appendices/}{C_reflection}
 
-\newpage
-\input{appendices/C_reflection}
-
+% End of document
 \end{document}

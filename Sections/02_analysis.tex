@@ -38,7 +38,7 @@ Owner states and Euronext shareholders & Indirect & Owners of the partners & Ind
 
 \textbf{Indirect stakeholders.} Households and firms on spot-price contracts are affected by every auction without taking part in it. Futures traders depend on the Nordic system price, which Nord Pool calculates and which most standard financial contracts in the Nordic region use as their reference price \citep{NPPrice}. Data users, from electricity retailers to researchers, buy or reuse Nord Pool's price data \citep{NPData,ERR2022}. The states that own the TSOs, and Euronext's shareholders, are indirect stakeholders through ownership.
 
-\input{figures/fig_ecosystem}
+\input{Images/fig_ecosystem}
 
 \textbf{Critical relationships and dependencies.} The most critical relationship is between Nord Pool and the TSOs, and it is asymmetric. Nord Pool cannot calculate a single price without the TSOs' capacity data. The TSOs, however, depend on the market coupling as a whole rather than on Nord Pool specifically: since the multi-NEMO arrangement went live in 2020, the same capacities are allocated through one common coupling in which EPEX also takes part \citep{EPEX2020}. The TSOs also collect the congestion income that arises when prices differ between zones \citep{EU2019943}. In the notation of Figure~\ref{fig:ecosystem}, Nord Pool depends on the TSOs, while the TSOs depend on the coupling.
 
@@ -110,7 +110,7 @@ TSOs are partners that supply a critical input rather than a paying side. Consum
 
 \textbf{Strength of the network effects.} The buyer--seller effect is strong and positive in both directions. Data customers benefit strongly from trading activity but have little effect on traders, so this effect runs one way. Small participants add depth and flexibility, which moderately benefits larger members. Among sellers, the same-side effect is weakly negative because of competition.
 
-\input{figures/fig_msp}
+\input{Images/fig_msp}
 
 \textbf{Pricing.} Unlike many alliances in this course, Nord Pool publishes its prices, so we can analyse its actual pricing rather than construct one (Table~\ref{tab:pricing}). The structure is a two-part tariff. Participants pay an annual fee of €21,500 for day-ahead and intraday access, plus a variable fee of €0.040/MWh for trading and €0.015/MWh for clearing in the day-ahead market \citep{NPFees2026}. The same fees apply to buyers and sellers, so neither the buy side nor the sell side is subsidised. This contrasts with the textbook's typical MSP, where one side uses the platform for free \citep[Sect.~10.2.2]{OverbyAudestad2021}. \citet{RochetTirole2003} show that the structure of prices matters when one side cannot pass costs on to the other. Here, both sides come from the same population of firms with similar price sensitivity, so symmetric pricing is sensible.
 
@@ -158,7 +158,8 @@ Each partner controls a distinct surface. Euronext controls group IT, shared ser
 \small
 \caption{Cost and loss map for platform security (qualitative; illustrative assumptions, no probabilities).}
 \label{tab:cyber}
-\begin{tabularx}{\textwidth}{L{2.4cm} L{1.6cm} L{3.2cm} L{2.0cm} L{2.0cm} Y}
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\textwidth}{L{2.2cm} L{1.5cm} L{2.8cm} L{1.9cm} L{1.9cm} Y}
 \toprule
 \textbf{Actor} & \textbf{Security effort} & \textbf{Loss if breached, $D_i$} & \textbf{Type of loss} & \textbf{Control over risk} & \textbf{Asymmetry} \\
 \midrule
@@ -199,8 +200,8 @@ Figure~\ref{fig:bmc} presents the full Business Model Canvas \citep[Sect.~19.2]{
 
 \textbf{What the canvas reveals about the alliance.} Reading the canvas by asking which partner controls each block shows the alliance's structure clearly. Euronext controls the value generation blocks (key activities, key resources and cost structure) through its majority and its group infrastructure. The TSOs contribute a key resource, capacity data, but appear in none of Nord Pool's revenue streams. Their compensation, congestion income, arises in the coupling and lies outside Nord Pool's canvas altogether \citep{EU2019943}. The textbook warns that business models often treat user groups as independent segments and miss their interactions \citep[Sect.~10.2.4]{OverbyAudestad2021}. For an alliance, the analogous risk is a canvas that treats the partners as one firm. The canvas only becomes informative when contributions and captures are attributed to each partner.
 
-\input{figures/fig_bmc}
+\input{Images/fig_bmc}
 
 \textbf{Stakeholder Relationship Model.} The SRM in Figure~\ref{fig:srm} complements the canvas by showing relationships and network effects \citep[Sect.~19.3]{OverbyAudestad2021}. It shows ownership (66/34), capacity data flowing from the TSOs to Nord Pool, fees and licences, the coupling agreement with other NEMOs, and NEMO designation by regulators. Buyers and sellers exert a positive network effect on each other (+/+), as do spot and futures liquidity (+/+), while sellers exert a negative same-side effect on each other ($-$/$-$). The effect of traders on data users runs only one way. The textbook's notation does not cover this case, so we mark it as (+/0). The SRM shows what the canvas hides: the critical dependencies run through actors who do not appear among Nord Pool's customer segments.
 
-\input{figures/fig_srm}
+\input{Images/fig_srm}
