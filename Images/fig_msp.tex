@@ -1,35 +1,83 @@
-% Figure 2: Multisided platform map with network effects and prices
 \begin{figure}[ht]
 \centering
 \begin{tikzpicture}[
   font=\footnotesize,
-  side/.style={draw, rounded corners=2pt, align=center, text width=3.1cm, minimum height=1.25cm, fill=green!6, draw=green!40!black},
-  plat/.style={draw, rounded corners=3pt, align=center, text width=3.6cm, minimum height=1.6cm, fill=blue!8, draw=blue!60!black, line width=0.8pt},
-  partner/.style={draw, rounded corners=2pt, align=center, text width=3.8cm, minimum height=1.1cm, fill=orange!10, draw=orange!70!black, dashed},
+  side/.style={draw, rounded corners=2pt, align=center,
+    text width=3.1cm, minimum height=1.25cm,
+    fill=green!6, draw=green!40!black},
+  plat/.style={draw, rounded corners=3pt, align=center,
+    text width=3.6cm, minimum height=1.6cm,
+    fill=blue!8, draw=blue!60!black, line width=0.8pt},
+  related/.style={draw, dashed, rounded corners=2pt,
+    align=center, text width=3.3cm, minimum height=1.1cm,
+    fill=gray!6, draw=gray!65},
+  partner/.style={related, fill=orange!10,
+    draw=orange!70!black},
   aff/.style={thick, gray!70},
-  ne/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]}, thick, red!65!black},
-  ne1/.style={-{Stealth[length=2mm]}, thick, red!65!black},
-  lbl/.style={font=\scriptsize, fill=white, inner sep=1pt, align=center}
+  ne/.style={{Stealth[length=2mm]}-{Stealth[length=2mm]},
+    thick, red!65!black},
+  ne1/.style={-{Stealth[length=2mm]},
+    thick, red!65!black},
+  lbl/.style={font=\scriptsize, fill=white,
+    inner sep=1pt, align=center}
 ]
-\node[plat] (np) at (0,0) {\textbf{Nord Pool}\\matching, system price,\\central clearing};
-\node[side] (sel) at (-4.8,0.9)  {\textbf{Sellers}\\(generators)\\\scriptsize €21.5k/yr + €0.055/MWh};
-\node[side] (buy) at (4.8,0.9)   {\textbf{Buyers}\\(retailers, industrials)\\\scriptsize €21.5k/yr + €0.055/MWh};
-\node[side] (sml) at (-4.8,-2.3) {\textbf{Small participants,}\\\textbf{aggregators}\\\scriptsize €0/yr + €0.140/MWh};
-\node[side] (dat) at (4.8,-2.3)  {\textbf{Data customers}\\\scriptsize €600--3,500/yr};
-\node[side] (fut) at (0,4.6)   {\textbf{Futures traders}\\(Euronext, EEX)\\\scriptsize pay Euronext/EEX, not Nord Pool};
-\node[partner] (tso) at (0,-3.2) {\textbf{TSOs} (partner, input)\\capacity data; no trading fee};
+\node[plat] (np) at (0,0)
+  {\textbf{Nord Pool}\\matching, system price,\\central clearing};
 
-% affiliation lines
-\foreach \s in {sel,buy,sml,dat} \draw[aff] (\s) -- (np);
-\draw[aff, dashed] (fut) -- node[lbl]{system price} (np);
-\draw[aff, dashed, orange!70!black] (tso) -- node[lbl]{capacities} (np);
+\node[side] (sel) at (-4.8,0.9)
+  {\textbf{Sellers}\\generators and other sellers\\
+   \scriptsize Standard tariff:\\€21.5k/yr + €0.055/MWh};
 
-% network effects
-\draw[ne] (sel.north) to[out=25,in=155] node[lbl, pos=0.5, yshift=1pt]{(+/+) strong cross-side} (buy.north);
-\draw[ne] (sml.north) -- node[lbl, right]{(+/+) moderate:\\depth, flexibility} (sel.south);
-\draw[ne1] (buy.south) -- node[lbl, right]{traders $\rightarrow$ data\\(+/0) one-way} (dat.north);
-\draw[ne, red!50] (sel.west) to[out=150,in=210, looseness=5] node[lbl, left]{($-$/$-$)\\same-side} (sel.south west);
+\node[side] (buy) at (4.8,0.9)
+  {\textbf{Buyers}\\retailers, industrials\\
+   \scriptsize Standard tariff:\\€21.5k/yr + €0.055/MWh};
+
+\node[related] (dat) at (4.8,-2.3)
+  {\textbf{Data customers}\\ancillary service\\
+   \scriptsize Retailer licence: €3,500/yr};
+
+\node[related] (fut) at (0,4.6)
+  {\textbf{Futures traders}\\complementary markets\\
+   \scriptsize affiliated with Euronext/EEX};
+
+\node[partner] (tso) at (0,-3.2)
+  {\textbf{TSOs}\\capacity-input partners\\no trading fee in this role};
+
+\node[related, text width=11.5cm] (small) at (0,-5.2)
+  {\textbf{Tariff segment within the buyer and seller sides: Small Participants}\\
+   \scriptsize Day-ahead: €0 fixed access fee + €0.140/MWh,
+   with a €3,000 annual floor.};
+
+\draw[aff] (sel) -- (np);
+\draw[aff] (buy) -- (np);
+
+\draw[aff, dashed] (dat.north west) --
+  node[lbl, below]{data service} (np.south east);
+
+\draw[aff, dashed] (fut) --
+  node[lbl]{reference price} (np);
+
+\draw[aff, dashed, orange!70!black] (tso) --
+  node[lbl]{capacity inputs} (np);
+
+\draw[ne] (sel.north) to[out=25,in=155]
+  node[lbl, pos=0.5]{(+/+) cross-side} (buy.north);
+
+\draw[ne1] (buy.south) --
+  node[lbl, right]{trading activity\\benefits data users} (dat.north);
+
+\draw[ne, red!50] (sel.west)
+  to[out=150,in=210, looseness=5]
+  node[lbl, left]{($-$/$-$)\\same-side} (sel.south west);
 \end{tikzpicture}
-\caption{Nord Pool as a multisided platform. Grey lines show affiliation with the platform, and red arrows show network effects with SRM-style signs. Prices are day-ahead fees from the 2026 fee schedule (trading + clearing) and data prices \citep{NPFees2026,ERR2022,NPData}. Buyers and sellers pay identical fees. TSOs are partners supplying an input, not a paying side, and consumers are not affiliated with the platform.}
+
+\caption{Nord Pool's core trading platform has buyer and seller sides.
+Solid grey lines show trading affiliation. Dashed boxes identify
+related services, complementary markets, infrastructure partners
+and a tariff segment rather than additional core trading sides.
+Red arrows show network effects and the informational benefit
+of trading activity for data users.
+Day-ahead fees and the retailer licence are from
+\citet{NPFees2026} and \citet{NPData}.}
 \label{fig:msp}
 \end{figure}

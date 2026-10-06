@@ -4,105 +4,480 @@
 \subsection{AI Use Log}
 \label{app:A}
 
-\textbf{Method.} For each task we followed the course cycle of generating, then evaluating and correcting, then reflecting. All five prompts were run in Claude (Anthropic; model \texttt{claude-opus-5-5}; Claude desktop app) on 5~October 2026. They were run in the same conversation that the group had used to search for and verify sources. The model therefore had access to our research notes when it answered, which partly explains why its factual claims were mostly accurate (see the Closing Group Reflection). Each prompt was preceded by the same context paragraph. The raw outputs are reproduced unedited in Appendix~B. Below, for each task, we list the claims we checked and what we checked them against, identify concrete errors, unsupported claims and missing elements, and name the course concept or evidence that exposes each flaw.
+\textbf{Method.} Before prompting AI for each task, the group
+formulated its own initial ideas and analytical points.
+We then followed the course cycle of generating an AI output,
+evaluating and correcting it, and reflecting on its usefulness
+and limitations. All five original task prompts were run in
+Claude (Anthropic; model \texttt{claude-opus-5-5};
+Claude desktop app) on 5~October 2026.
+They were run in the same conversation used for source research,
+so the model had access to research notes.
+Each prompt was preceded by the context paragraph reproduced below.
+The original outputs are preserved unedited in Appendix~B.
+
+The group compared these outputs with its initial reasoning
+and checked claims against course theory and case evidence.
+Corrections were made to the analysis rather than retrospectively
+changing the raw outputs. A supplementary AI-assisted review
+subsequently identified an overstatement in our own system-price
+correction and problems with the classification of platform sides.
+These further corrections are recorded below.
 
 \begin{promptbox}
-Context (given before all five prompts): Nord Pool is a European power exchange owned 66\% by Euronext and 34\% by TSO Holding, which is owned by the Nordic and Baltic transmission system operators (including Statnett). For a university case study in digital economics, treat the Euronext--TSO alliance behind Nord Pool as the unit of analysis, not a single firm. Keep each answer to max 400 words.
+Context (given before all five prompts): Nord Pool is a European
+power exchange owned 66\% by Euronext and 34\% by TSO Holding,
+which is owned by the Nordic and Baltic transmission system
+operators (including Statnett). For a university case study
+in digital economics, treat the Euronext--TSO alliance behind
+Nord Pool as the unit of analysis, not a single firm.
+Keep each answer to max 400 words.
 \end{promptbox}
 
 % ---------------------------------------------------------------------
 \subsubsection*{A.1 Task 1: Business ecosystem}
-\textbf{Tool:} Claude, \texttt{claude-opus-5-5}, 5~October 2026. \quad \textbf{Output:} Appendix~B.1.
+
+\textbf{Tool:} Claude, \texttt{claude-opus-5-5},
+5~October 2026.
+\quad \textbf{Output:} Appendix~B.1.
+
 \begin{promptbox}
-Identify the direct and indirect stakeholders in Nord Pool's business ecosystem, the key interactions, complementarities and dependencies between them, and explain how the alliance structure changes the roles, incentives and influence of the main actors.
+Identify the direct and indirect stakeholders in Nord Pool's
+business ecosystem, the key interactions, complementarities
+and dependencies between them, and explain how the alliance
+structure changes the roles, incentives and influence
+of the main actors.
 \end{promptbox}
 
-\textbf{Claims checked.} The current owners of TSO Holding (EPSO-G, Statnett, Svenska kraftnät) are correct according to \citet{NPAbout}. The output also fixes an error in our own context paragraph, which implied that all Nordic and Baltic TSOs are owners. The exit of Fingrid and Energinet matches \citet{EPSOG2022}, and ``around 400 firms'' matches \citet{NP2024}. EPEX's entry in 2020 matches \citet{EPEX2020}.
+\textbf{Claims checked.} The current owners of TSO Holding
+(EPSO-G, Statnett, Svenska kraftnät) are correct according to
+\citet{NPAbout}. The output also fixes an error in our own
+context paragraph, which implied that all Nordic and Baltic
+TSOs are owners. The exit of Fingrid and Energinet matches
+\citet{EPSOG2022}, and ``around 400 firms'' matches
+\citet{NP2024}. EPEX's entry in 2020 matches \citet{EPEX2020}.
 
-\textbf{Error 1: oversimplified dependency model.} The output describes Nord Pool and the TSOs as a symmetric ``mutual dependency''. Applying the textbook's dependency notation \citep[Fig.~4.3]{OverbyAudestad2021} exposes the flaw. Nord Pool depends on the TSOs' capacities, but since the multi-NEMO arrangement went live in 2020 \citep{EPEX2020}, the TSOs depend on the shared coupling rather than on Nord Pool specifically. The claim that without Nord Pool's auction there would be ``no congestion income'' is also overstated, as congestion income arises in the coupling regardless of which exchange is used \citep{EU2019943}. Even ``no capacities, no prices'' holds only for the area prices. The system price is calculated with capacities ``set to infinity'' \citep{NPPrice}, so it does not depend on TSO data. \emph{Correction:} Section~\ref{sec:t1} and Figure~\ref{fig:ecosystem} model the dependency as asymmetric.
+\textbf{Error 1: oversimplified dependency model.}
+The output describes Nord Pool and the TSOs as a symmetric
+``mutual dependency''. Applying the textbook's dependency
+notation \citep[Fig.~4.3]{OverbyAudestad2021} exposes
+the oversimplification. Nord Pool relies on TSO capacity inputs,
+but under the multi-NEMO arrangement the TSOs depend on the
+shared coupling rather than on Nord Pool alone
+\citep{EPEX2020}. The claim that without Nord Pool's auction
+there would be ``no congestion income'' is also overstated,
+since congestion income arises through the coupled market
+\citep{EU2019943}.
 
-\textbf{Error 2: unsupported claim about preferences.} The output states that ``TSOs want transparent, low-cost price formation''. It gives no evidence, and we found no source stating the TSOs' preferences. \emph{Correction:} we replaced attributed motives with observable evidence: the TSOs hold one of eight board seats \citep{NPBoard}, two TSOs exited ownership \citep{EPSOG2022}, and Euronext has made documented commercial decisions on data and futures \citep{ERR2022,Euronext2026}.
+Our initial revision introduced a further overstatement
+by claiming that the Nordic system price does not depend
+on TSO data. Nord Pool's documentation states that internal
+Nordic capacities are set to infinity, but that flows between
+the Nordics and surrounding markets from the area-price
+calculation are included as import or export orders
+\citep{NPPrice}. Removing internal congestion restrictions
+therefore does not remove all dependence on capacity inputs.
+\emph{Correction:} Sections~\ref{sec:t1} and~\ref{sec:t5}
+now distinguish the two calculations without claiming
+that the system price is independent of TSO data.
+This correction also shows why our revisions required
+further checking after the first AI evaluation.
 
-\textbf{Error 3: factual errors about futures and owners.} The output states that Euronext ``since 2026 also runs Nordic power futures in the Nord Pool environment''. This is wrong: the futures trade on Euronext's Optiq platform and clear on Euronext Clearing, and Nord Pool only provides the underlying system and spot prices \citep{Euronext2026}. The output also calls EPSO-G, Statnett and Svenska kraftnät ``the TSOs'', but EPSO-G is the Lithuanian state-owned group that owns the TSO Litgrid, not a TSO itself \citep{EPSOG2022}. Both errors first slipped into our own draft and were caught only when we checked the draft against the sources. \emph{Correction:} Section~\ref{sec:t1}, Table~\ref{tab:stakeholders} and Figure~\ref{fig:ecosystem}.
+\textbf{Error 2: unsupported claim about preferences.}
+The output states that ``TSOs want transparent, low-cost
+price formation''. It gives no evidence, and we found no
+source stating the TSOs' preferences in these terms.
+\emph{Correction:} we replaced attributed motives with
+observable evidence: the TSOs hold one of eight board seats
+\citep{NPBoard}, two TSOs exited ownership
+\citep{EPSOG2022}, and Euronext has made documented
+commercial decisions on data and futures
+\citep{ERR2022,Euronext2026}.
 
-\textbf{Missing stakeholder.} The output omits EEX, whose Nordic system price futures use the system price that Nord Pool calculates \citep{EEX2024}. This is a clear example of the textbook's point that removing or changing one actor affects others in the ecosystem \citep[Sect.~4.1]{OverbyAudestad2021}. We added EEX to Table~\ref{tab:stakeholders}.
+\textbf{Error 3: factual errors about futures and owners.}
+The output states that Euronext ``since 2026 also runs
+Nordic power futures in the Nord Pool environment''.
+This is imprecise: the futures trade on Euronext's Optiq
+platform and clear on Euronext Clearing, while Nord Pool
+provides the underlying system and spot prices
+\citep{Euronext2026}. The output also calls EPSO-G,
+Statnett and Svenska kraftnät ``the TSOs'', but EPSO-G
+is the Lithuanian state-owned group that owns the TSO
+Litgrid, not a TSO itself \citep{EPSOG2022}.
+Both errors first slipped into our own draft and were
+caught when we checked the draft against the sources.
+\emph{Correction:} Section~\ref{sec:t1},
+Table~\ref{tab:stakeholders} and Figure~\ref{fig:ecosystem}.
 
-\textbf{Reflection.} The output was useful as a fast, well-structured first list of stakeholders. It failed where judgement was needed: it treated an asymmetric relationship as symmetric and presented assumed motives as facts. Its factual slips were small and plausible, which is exactly why we did not notice them until a second check.
+\textbf{Missing stakeholder.} The output omits EEX,
+whose Nordic system price futures use the system price
+that Nord Pool calculates \citep{EEX2024}.
+This illustrates the textbook's point that removing
+or changing one actor affects others in the ecosystem
+\citep[Sect.~4.1]{OverbyAudestad2021}.
+We added EEX to Table~\ref{tab:stakeholders}.
+
+\textbf{Reflection.} The output was useful as a fast,
+well-structured first list of stakeholders.
+It failed where judgement was needed: it treated an
+asymmetric relationship as symmetric and presented
+assumed motives as facts. Further checking also showed
+that our own first correction could introduce an error.
 
 % ---------------------------------------------------------------------
 \subsubsection*{A.2 Task 2: Network effects and path dependency}
-\textbf{Tool:} Claude, \texttt{claude-opus-5-5}, 5~October 2026. \quad \textbf{Output:} Appendix~B.2.
+
+\textbf{Tool:} Claude, \texttt{claude-opus-5-5},
+5~October 2026.
+\quad \textbf{Output:} Appendix~B.2.
+
 \begin{promptbox}
-Identify the network effects associated with Nord Pool's platform. Does it become more valuable as more participants, market areas, TSOs, data sources or complementary services join? Do data accumulation, standards, sunk costs, learning effects or switching costs create path dependency, lock-in, tipping or winner-takes-all dynamics?
+Identify the network effects associated with Nord Pool's
+platform. Does it become more valuable as more participants,
+market areas, TSOs, data sources or complementary services
+join? Do data accumulation, standards, sunk costs,
+learning effects or switching costs create path dependency,
+lock-in, tipping or winner-takes-all dynamics?
 \end{promptbox}
 
-\textbf{Claims checked.} The system price as the reference for Nordic financial contracts \citep{NPPrice}, multi-NEMO in 2020 \citep{EPEX2020} and the 15-minute MTU \citep{OTE2025} are correct. The point that the coupling is shared by all exchanges is consistent with how SDAC works.
+\textbf{Claims checked.} The system price as the reference
+for Nordic financial contracts \citep{NPPrice},
+multi-NEMO in 2020 \citep{EPEX2020} and the 15-minute
+MTU \citep{OTE2025} are correct.
+The point that the coupling is shared by all exchanges
+is consistent with how SDAC works.
 
-\textbf{Error 1: missing key distinction.} The output never distinguishes network effects from supply-side economies of scale. That distinction is central to the textbook definition \citep[Def.~9.1]{OverbyAudestad2021}, and it matters for an exchange whose low marginal cost per trade could easily be mistaken for a network effect. \emph{Correction:} Section~\ref{sec:t2} opens with this distinction.
+\textbf{Error 1: missing key distinction.}
+The output never distinguishes network effects from
+supply-side economies of scale.
+That distinction is central to the textbook definition
+\citep[Def.~9.1]{OverbyAudestad2021}, and it matters
+for an exchange whose low marginal cost per trade
+could easily be mistaken for a network effect.
+\emph{Correction:} Section~\ref{sec:t2}
+opens with this distinction.
 
-\textbf{Error 2: unsupported claims.} The output asserts that each new zone ``increases welfare'' without evidence, and that ``the marginal value of one more large Nordic member is smaller'' without any basis. \emph{Correction:} we support the first claim with \citet{Newbery2016} and dropped the second.
+\textbf{Error 2: unsupported claims.}
+The output asserts that each new zone ``increases welfare''
+without evidence, and that ``the marginal value of one more
+large Nordic member is smaller'' without any basis.
+\emph{Correction:} we support the market-integration
+argument with \citet{Newbery2016} and dropped
+the unsupported marginal-value claim.
 
-\textbf{Error 3: generic argument.} ``Sunk costs and learning effects in market design reinforce the Nordic model'' names no mechanism and no evidence. \emph{Correction:} we kept both concepts, which the task names, but stated their mechanisms: sunk investments in IT integration and collateral arrangements, and learning effects among staff trained on Nord Pool's systems. Both act as switching costs \citep[Def.~12.2]{OverbyAudestad2021}. We added the de facto standard argument \citep[Def.~15.1]{OverbyAudestad2021} and \citet{Arthur1989} on lock-in from early advantages. We also added the observation that regulation \emph{lowers} switching costs, the electricity analogue of number portability \citep[Sect.~12.6]{OverbyAudestad2021}.
+\textbf{Error 3: generic argument.}
+``Sunk costs and learning effects in market design reinforce
+the Nordic model'' names no mechanism and no evidence.
+\emph{Correction:} we kept both concepts, which the task
+names, but stated their mechanisms: sunk investments
+in IT integration and collateral arrangements,
+and learning effects among staff trained on Nord Pool's
+systems. Both act as switching costs
+\citep[Def.~12.2]{OverbyAudestad2021}.
+We added the de facto standard argument
+\citep[Def.~15.1]{OverbyAudestad2021}
+and \citet{Arthur1989} on lock-in from early advantages.
+We also added the observation that regulation
+\emph{lowers} switching costs, the electricity analogue
+of number portability
+\citep[Sect.~12.6]{OverbyAudestad2021}.
 
-\textbf{Missing evidence.} ``EPEX has entered'' and ``lock-in may be moving to futures'' were not quantified. We added EPEX's 54~TWh of Nordic day-ahead volume in 2024 \citep{EPEX2025} and the open-interest figures for Euronext and EEX \citep{Euronext2026,EEX2026}. We also classified each effect as direct or indirect and same-side or cross-side (Table~\ref{tab:ne}), which the output did only partly.
+\textbf{Missing evidence.}
+``EPEX has entered'' and ``lock-in may be moving to futures''
+were not quantified. We added EPEX's 54~TWh of Nordic
+day-ahead volume in 2024 \citep{EPEX2025}
+and the open-interest figures for Euronext and EEX
+\citep{Euronext2026,EEX2026}.
+We also classified the effects in Table~\ref{tab:ne},
+which the output did only partly.
 
-\textbf{Reflection.} The list of effects was a usable checklist. Its weakness was confident claims without evidence and a missing conceptual distinction that the course treats as fundamental.
+\textbf{Reflection.} The list of effects was a usable
+checklist. Its weakness was confident claims without
+evidence and a missing conceptual distinction that
+the course treats as fundamental.
 
 % ---------------------------------------------------------------------
 \subsubsection*{A.3 Task 3: Multisided platform and pricing}
-\textbf{Tool:} Claude, \texttt{claude-opus-5-5}, 5~October 2026. \quad \textbf{Output:} Appendix~B.3.
+
+\textbf{Tool:} Claude, \texttt{claude-opus-5-5},
+5~October 2026.
+\quad \textbf{Output:} Appendix~B.3.
+
 \begin{promptbox}
-Identify the distinct user groups (sides) of Nord Pool's platform and the cross-side and same-side network effects between them. Describe Nord Pool's pricing model for each side: who pays, how much, and who is subsidised.
+Identify the distinct user groups (sides) of Nord Pool's
+platform and the cross-side and same-side network effects
+between them. Describe Nord Pool's pricing model for
+each side: who pays, how much, and who is subsidised.
 \end{promptbox}
 
-\textbf{Claims checked.} We checked every fee against the official 2026 fee schedule \citep{NPFees2026}: the €21,500 annual fee, €0.040 + €0.015/MWh day-ahead, the Small Participant terms, €0.109/MWh intraday, and the caps of €65,000 and €375,000. All are correct. The data prices also match their sources \citep{NPData,ERR2022}. The output did \emph{not} fabricate prices. This is because the model had our verified notes in context; it is not evidence that AI can be trusted with prices in general.
+\textbf{Claims checked.}
+The principal trading fees quoted by the output match
+the official 2026 fee schedule \citep{NPFees2026}.
+The €3,500 retailer licence matches \citet{NPData}.
+The €600 historical-data price matches the 2022 report
+\citep{ERR2022}, but this does not establish that
+it remains the price in 2026.
+The output did not invent these quoted prices,
+although their dates and scope still required checking.
 
-\textbf{Error 1: missing theoretical test.} The output assumes that Nord Pool is an MSP without testing this against the definition \citep[Def.~10.1]{OverbyAudestad2021}. Because Nord Pool is the central counterparty to every trade \citep{NPClearing}, it formally resembles a reseller, which the textbook explicitly distinguishes from an MSP \citep[Sect.~10.5]{OverbyAudestad2021}. \emph{Correction:} Section~\ref{sec:t3} carries out the test using the control-over-terms criterion of \citet{HagiuWright2015}.
+\textbf{Error 1: missing theoretical test.}
+The output assumes that Nord Pool is an MSP without
+testing the definition
+\citep[Def.~10.1]{OverbyAudestad2021}.
+Its central-counterparty role also requires distinguishing
+mediation from resale.
+\emph{Correction:} Section~\ref{sec:t3}
+applies the control-over-terms criterion of
+\citet{HagiuWright2015}
+to the core buyer--seller interaction.
 
-\textbf{Error 2: assumption presented as fact.} ``Data customers and mid-sized members are the main money side'' cannot be verified, as Nord Pool's revenue breakdown is not public. \emph{Correction:} we restate it as an explicit assumption and defend it from the structure of the tariff.
+\textbf{Error 2: overlapping groups treated as sides.}
+Small participants are buyers or sellers using a different
+tariff, not an additional side merely because of that tariff.
+Futures traders are affiliated with complementary markets,
+and buying a data product does not by itself demonstrate
+direct interaction with another affiliated user group.
+Our first version repeated this classification problem.
+\emph{Correction:} Section~\ref{sec:t3}
+and Figure~\ref{fig:msp} now distinguish the two core
+trading sides from tariff segments, ancillary services
+and complementary markets.
+Figure~\ref{fig:srm} preserves these actors as stakeholders
+without treating them all as platform sides.
 
-\textbf{Error 3: oversimplification.} ``TSOs do not pay'' ignores that CACM requires TSOs and NEMOs to share the costs of the coupling \citep{CACM2015}. \emph{Correction:} we say instead that TSOs pay no trading fees in their role as capacity providers.
+\textbf{Error 3: unsupported subsidy interpretation.}
+The claim that data customers and mid-sized members
+are the main ``money side'' is not established
+by the published tariff.
+Lower fixed fees and caps may encourage participation,
+but do not by themselves identify who finances whom.
+\emph{Correction:} we retain the interpretation of
+differentiated pricing using \citet{RochetTirole2003}
+and \citet{Armstrong2006}, without presenting
+an unverified cross-subsidy as fact.
+The Small Participant annual floor is included
+in the revised platform figure.
 
-\textbf{Weak subsidy logic.} The output attributes intentions (``to grow the long tail'') without evidence and links them to no theory. It also omits the gross volume fee cap (€150,000). \emph{Correction:} we interpret the tariff using \citet{RochetTirole2003}, who show that the split of the price between sides follows their demand elasticities, and \citet{Armstrong2006}, and label the intention as our interpretation.
+\textbf{Error 4: oversimplified TSO costs.}
+``TSOs do not pay'' overlooks the sharing of coupling
+costs under CACM \citep{CACM2015}.
+\emph{Correction:} we distinguish the absence of trading
+fees in the capacity-provider role from contributions
+to the coupling infrastructure.
 
-\textbf{Reflection.} With verified input, the AI reproduced facts accurately, but it skipped the theoretical step that determines whether MSP pricing theory applies at all, and it blurred the line between evidence and assumption.
+\textbf{Reflection.}
+The output reproduced several sourced prices accurately
+but blurred the distinction between platform sides
+and other customer or stakeholder groups.
+Revising the output required applying the MSP definition
+consistently to the text, pricing table and figures.
 
 % ---------------------------------------------------------------------
 \subsubsection*{A.4 Task 4: Cybersecurity economics}
-\textbf{Tool:} Claude, \texttt{claude-opus-5-5}, 5~October 2026. \quad \textbf{Output:} Appendix~B.4.
+
+\textbf{Tool:} Claude, \texttt{claude-opus-5-5},
+5~October 2026.
+\quad \textbf{Output:} Appendix~B.4.
+
 \begin{promptbox}
-How should Euronext and the TSOs allocate cybersecurity responsibility and investment for Nord Pool's platform between them? Would hosting and operating the platform domestically in the Nordic region make it more secure?
+How should Euronext and the TSOs allocate cybersecurity
+responsibility and investment for Nord Pool's platform
+between them? Would hosting and operating the platform
+domestically in the Nordic region make it more secure?
 \end{promptbox}
 
-\textbf{Claims checked.} The output does not invent probabilities, costs or return-on-investment figures, and it treats security as a jointly provided good, consistent with \citet{Kianpour2022}. NIS2's listing of NEMOs \citep{NIS2} and the start date of the Norwegian Digital Security Act \citep{Regjeringen2025} are correct. Its point that the private optima sum to less than the social optimum is correct \citep{AndersonMoore2006}.
+\textbf{Claims checked.}
+The output does not invent probabilities, costs
+or return-on-investment figures, and it treats security
+as a jointly provided good, consistent with
+\citet{Kianpour2022}.
+NIS2's listing of NEMOs \citep{NIS2}
+and the start date of the Norwegian Digital Security Act
+\citep{Regjeringen2025} are correct.
+Its argument about private incentives identifies
+a security-externality mechanism
+\citep{AndersonMoore2006}, although it does not measure
+the alliance's actual security investment.
 
-\textbf{Error 1: instruments implied to exist without evidence.} The output lists ``SLAs with penalties between Nord Pool and the TSOs, \dots\ joint exercises and cyber insurance'' without indicating whether the alliance actually uses them. We found no public evidence of any of them. \emph{Correction:} Section~\ref{sec:t4} states explicitly where the public record is silent.
+\textbf{Error 1: instruments implied to exist without evidence.}
+The output lists ``SLAs with penalties between Nord Pool
+and the TSOs, \dots\ joint exercises and cyber insurance''
+without indicating whether the alliance actually uses them.
+We found no public evidence confirming these arrangements.
+\emph{Correction:} Section~\ref{sec:t4}
+states explicitly where the public record is silent.
 
-\textbf{Error 2: flawed allocation rule.} The output recommends allocating investment ``in proportion to control over each attack surface''. Under weakest-link provision, the breach probability is set by the least-protected partner \citep{Hirshleifer1983}, and the largest losses fall on actors who control nothing. Allocating by control alone therefore leaves the externality in place. \emph{Correction:} our cost and loss map (Table~\ref{tab:cyber}) separates control from loss, and we identify regulation and collateral as the instruments that shift risk back to the parties that control it.
+\textbf{Error 2: flawed allocation rule.}
+The output recommends allocating investment
+``in proportion to control over each attack surface''.
+Under weakest-link provision, the least-protected
+contribution determines the level of protection
+\citep{Hirshleifer1983}, while losses can also fall
+on actors who control no part of the platform.
+Allocating investment by control alone does not
+necessarily resolve this externality.
+\emph{Correction:} our cost and loss map
+(Table~\ref{tab:cyber}) separates control from loss
+and considers instruments for reallocating risk.
 
-\textbf{Error 3: unsupported assumption.} ``Euronext can bring group-level security operations, threat intelligence and resilience standards'' is plausible, but no source describes how Nord Pool's security is integrated with Euronext. \emph{Correction:} Section~\ref{sec:t4} labels it explicitly as our assumption.
+\textbf{Error 3: unsupported assumption.}
+``Euronext can bring group-level security operations,
+threat intelligence and resilience standards''
+is plausible, but no source describes how Nord Pool's
+security is integrated with Euronext.
+\emph{Correction:} Section~\ref{sec:t4}
+labels it explicitly as our assumption.
 
-\textbf{Missing links.} The task requires linking the loss magnitude to the network effects (Task~2) and the subsidised side (Task~3). The output does neither and includes no cost and loss table. We added both.
+\textbf{Missing links.}
+The task requires linking the loss magnitude
+to the network effects in Task~2
+and the pricing incentives in Task~3.
+The output does neither and includes no cost and loss table.
+We added these connections and the table.
+Following the revised platform classification,
+Small Participants are discussed as a tariff segment
+within the trading sides rather than a separate
+subsidised platform side.
 
-\textbf{Reflection.} The output was cautious and well structured, which made it a good starting point. It was weakest where it moved from description to recommendation, and it did not connect security to the rest of the analysis.
+\textbf{Reflection.}
+The output was cautious and well structured,
+which made it a useful starting point.
+It was weakest where it moved from description
+to recommendation, and it did not connect security
+to the rest of the analysis.
 
 % ---------------------------------------------------------------------
 \subsubsection*{A.5 Task 5: Business Model Canvas and SRM}
-\textbf{Tool:} Claude, \texttt{claude-opus-5-5}, 5~October 2026. \quad \textbf{Output:} Appendix~B.5.
+
+\textbf{Tool:} Claude, \texttt{claude-opus-5-5},
+5~October 2026.
+\quad \textbf{Output:} Appendix~B.5.
+
 \begin{promptbox}
-Create a Business Model Canvas (all nine blocks) for the Nord Pool alliance, and a Stakeholder Relationship Model showing the key stakeholders, their relationships, dependencies, and positive or negative network effects.
+Create a Business Model Canvas (all nine blocks)
+for the Nord Pool alliance, and a Stakeholder Relationship
+Model showing the key stakeholders, their relationships,
+dependencies, and positive or negative network effects.
 \end{promptbox}
 
-\textbf{Claims checked.} The blocks are broadly consistent with Nord Pool's own description of its services \citep{NPAbout} and with the textbook's block definitions \citep[Table~19.1]{OverbyAudestad2021}.
+\textbf{Claims checked.}
+The blocks are broadly consistent with Nord Pool's
+own description of its services \citep{NPAbout}
+and with the textbook's block definitions
+\citep[Table~19.1]{OverbyAudestad2021}.
 
-\textbf{Error 1: unsupported revenue claim.} ``Futures (via Euronext)'' is listed as a Nord Pool revenue stream without evidence. The futures trade on Euronext's Optiq platform and clear on Euronext Clearing, and the press release states only that ``Nord Pool provides the underlying system and spot prices'' \citep{Euronext2026}. How the futures revenue is split between Euronext and Nord Pool is not public. Asking \emph{whose} revenue it is exposes the gap, but the evidence does not support the opposite claim either, that all of it goes to Euronext. \emph{Correction:} Section~\ref{sec:t5} and Figure~\ref{fig:bmc} state that the split is not public.
+\textbf{Error 1: unsupported revenue claim.}
+``Futures (via Euronext)'' is listed as a Nord Pool
+revenue stream without evidence.
+The futures trade on Euronext's Optiq platform
+and clear on Euronext Clearing, and the press release
+states that ``Nord Pool provides the underlying system
+and spot prices'' \citep{Euronext2026}.
+How the futures revenue is split between Euronext
+and Nord Pool is not public.
+Asking \emph{whose} revenue it is exposes the gap,
+but the evidence does not support the opposite claim
+either, that all of it goes to Euronext.
+\emph{Correction:} Section~\ref{sec:t5}
+and Figure~\ref{fig:bmc}
+state that the split is not public.
 
-\textbf{Error 2: single-firm framing of partners.} ``TSOs'' are treated as one partner group. This hides the most important governance fact: some TSOs are owners and others are only input suppliers \citep{EPSOG2022}. The output also lists EPSO-G among the TSOs (see A.1). \emph{Correction:} we distinguish owner and non-owner TSOs.
+\textbf{Error 2: single-firm framing of partners.}
+``TSOs'' are treated as one partner group.
+This hides an important governance distinction:
+some TSOs participate in ownership and others
+are input suppliers without an ownership stake
+\citep{EPSOG2022}.
+The output also lists EPSO-G among the TSOs
+(see A.1).
+\emph{Correction:} we distinguish owner
+and non-owner TSOs.
 
-\textbf{Error 3: missing cost item.} The cost structure omits the shared costs of the coupling, which CACM allocates between NEMOs and TSOs \citep{CACM2015}.
+\textbf{Error 3: missing cost item.}
+The cost structure omits the shared costs
+of the coupling, which CACM allocates
+between NEMOs and TSOs \citep{CACM2015}.
+\emph{Correction:} these costs are included
+in the revised canvas.
 
-\textbf{Unsupported segment.} ``TSOs (auction services)'' appears as a customer segment without evidence. We could not verify it and removed it.
+\textbf{Unsupported segment.}
+``TSOs (auction services)'' appears as a customer
+segment without evidence for the specific claim.
+We could not verify it and removed it.
 
-\textbf{SRM notation.} The SRM is given only in text form, and the one-way effect from traders to data users is described without notation. The textbook's SRM notation covers only (+/+), ($-$/$-$) and (+/$-$) \citep[Sect.~19.3]{OverbyAudestad2021}. We drew Figure~\ref{fig:srm} with the textbook notation and an explicitly marked extension, (+/0).
+\textbf{SRM notation and platform boundary.}
+The initial SRM was provided in text form.
+We drew Figure~\ref{fig:srm} using the textbook
+notation and the explicitly marked extension (+/0)
+for the informational benefit of trading activity
+for data customers.
+A subsequent review also identified that our figures
+treated Small Participants as a distinct side
+even though they are a tariff segment
+within buyers and sellers.
+We removed the separate cross-side-effect arrow
+for this segment.
+Futures traders and data customers remain
+in the SRM as stakeholders in complementary markets
+and ancillary services.
+Being included in an SRM does not imply being a side
+of the core MSP
+\citep[Def.~10.1 and Sect.~19.3]{OverbyAudestad2021}.
 
-\textbf{Reflection.} The canvas was a complete first checklist. It reproduced the typical weakness that a canvas is written as if one firm owned all costs, revenues and resources, which is exactly what an alliance analysis must avoid.
+\textbf{Reflection.}
+The canvas was a complete first checklist.
+It reproduced the weakness of writing a canvas
+as if one firm owned all costs, revenues and resources.
+The revised SRM also distinguishes the wider stakeholder
+network from the narrower set of core platform sides.
+
+% ---------------------------------------------------------------------
+\subsubsection*{A.6 Supplementary AI-assisted review}
+
+\textbf{Tool:} Codex, OpenAI desktop app.
+The exact model version was not recorded.
+\quad \textbf{Latest log revision recorded:}
+\texttt{2026-10-06T17:09:27+02:00}.
+
+\textbf{Request summary.}
+We asked for a review of the case against the assignment
+description and supporting course material,
+focusing on possible obstacles to approval.
+We then clarified that the group had formulated
+its own initial ideas before prompting AI
+and requested proposed LaTeX revisions
+to describe this process accurately,
+correct the system-price dependency,
+and distinguish platform sides from other
+stakeholder groups.
+A follow-up request asked for complete replacement
+files for the SRM, AI log and closing reflection.
+This paragraph summarises the requests
+rather than reproducing them verbatim.
+
+\textbf{Output and evaluation.}
+The review proposed targeted revisions
+to the declaration, analysis, figures and reflection.
+The substantive corrections are grounded
+in Nord Pool's price-calculation documentation
+\citep{NPPrice} and the MSP definition
+\citep[Def.~10.1]{OverbyAudestad2021}.
+In particular, setting internal Nordic capacities
+to infinity does not remove the import and export
+flows taken from the area-price calculation.
+Small Participants are a tariff segment,
+while futures traders and data customers
+must be distinguished from the core trading sides.
+
+\textbf{Status.}
+The group has reviewed the supplementary AI feedback,
+checked the revised claims against the cited sources,
+and revised the proposed wording where necessary.
+The accepted corrections are incorporated
+into the analysis, figures and appendices.
+The group takes responsibility for the submitted
+arguments and wording.
+The original five task outputs in Appendix~B
+remain unchanged.
+The supplementary requests and responses
+are retained in the review conversation.

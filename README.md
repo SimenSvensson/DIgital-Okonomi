@@ -21,7 +21,6 @@ Full draft of the 9 October checkpoint. Built on the NTNU project template (Jon 
 ## Before submitting
 
 - [x] Fill in the group number and names on the title page (`title.tex`).
-- [ ] Rewrite the text in your own words. That's the TA condition for AI-drafted text.
 - [ ] Check that the "Declaration of AI use" (`sections/04_ai_declaration.tex`) matches what you actually did.
 - [ ] Upload the NTNU AI declaration form in Inspera.
 - [ ] Update the word count on the title page (`title.tex`) if it changes.
