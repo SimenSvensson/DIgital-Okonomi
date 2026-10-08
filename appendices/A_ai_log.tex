@@ -56,6 +56,18 @@ context paragraph, which implied that all Nordic and Baltic
 TSOs are owners. The exit of Fingrid and Energinet matches
 \citet{EPSOG2022}, and ``around 400 firms'' matches
 \citet{NP2024}. EPEX's entry in 2020 matches \citet{EPEX2020}.
+We also kept two points from the output after checking them.
+Its description of Euronext and the TSOs as bringing
+complementary resources (commercial and technological
+capabilities on one side; system knowledge, capacity data
+and legitimacy on the other) is consistent with Euronext's
+stated aims \citep{Euronext2020} and the TSOs' role in
+price calculation \citep{NPPrice}; we grounded it in the
+complementarity concept of \citet{Jacobides2018}
+(Section~\ref{sec:t1}). Its point that the TSOs' influence
+now runs through regulation and the shared coupling rather
+than ownership is consistent with their single board seat
+\citep{NPBoard} and the 2022 exits \citep{EPSOG2022}.
 
 \textbf{Error 1: oversimplified dependency model.}
 The output describes Nord Pool and the TSOs as a symmetric
@@ -89,19 +101,25 @@ The output states that ``TSOs want transparent, low-cost
 price formation''. It gives no evidence, and we found no
 source stating the TSOs' preferences in these terms.
 \emph{Correction:} we replaced attributed motives with
-observable evidence: the TSOs hold one of eight board seats
+observable evidence: the TSOs hold one of six shareholder board seats
 \citep{NPBoard}, two TSOs exited ownership
 \citep{EPSOG2022}, and Euronext has made documented
 commercial decisions on data and futures
 \citep{ERR2022,Euronext2026}.
 
-\textbf{Error 3: factual errors about futures and owners.}
+\textbf{Error 3: outdated futures wording and a misclassified owner.}
 The output states that Euronext ``since 2026 also runs
 Nordic power futures in the Nord Pool environment''.
-This is imprecise: the futures trade on Euronext's Optiq
-platform and clear on Euronext Clearing, while Nord Pool
-provides the underlying system and spot prices
-\citep{Euronext2026}. The output also calls EPSO-G,
+This follows wording from before the launch: when the
+acquisition closed, Euronext's CEO said the new platform
+``will be operated in the NordPool environment with clearing
+by Euronext Clearing'' \citep{FOW2025}. The March 2026
+launch release is more precise: the futures trade on
+Euronext's Optiq platform and clear on Euronext Clearing,
+while Nord Pool provides the underlying system and spot
+prices \citep{Euronext2026}. The distinction matters for
+the alliance analysis, because it shows which partner runs
+the futures market. The output also calls EPSO-G,
 Statnett and Svenska kraftnät ``the TSOs'', but EPSO-G
 is the Lithuanian state-owned group that owns the TSO
 Litgrid, not a TSO itself \citep{EPSOG2022}.
@@ -153,14 +171,25 @@ multi-NEMO in 2020 \citep{EPEX2020} and the 15-minute
 MTU \citep{OTE2025} are correct.
 The point that the coupling is shared by all exchanges
 is consistent with how SDAC works.
+We kept the output's overall conclusion that the Nordic
+spot market had tipped to Nord Pool before 2020 and is now
+a contestable incumbent rather than a winner-takes-all
+monopoly. Until the multi-NEMO go-live on 3~June 2020,
+the Nordic bidding zones were not open to more than one
+exchange \citep{EPEX2020}, and EPEX's 54~TWh in 2024
+\citep{EPEX2025} shows a foothold rather than a takeover
+(Section~\ref{sec:t2}). The five effects in
+Table~\ref{tab:ne} also follow the output's list;
+we kept each one after checking its classification against
+the textbook \citep[Sect.~9.2--9.5]{OverbyAudestad2021}
+and adding a source for the mechanism.
 
 \textbf{Error 1: missing key distinction.}
-The output never distinguishes network effects from
-supply-side economies of scale.
-That distinction is central to the textbook definition
-\citep[Def.~9.1]{OverbyAudestad2021}, and it matters
-for an exchange whose low marginal cost per trade
-could easily be mistaken for a network effect.
+The output confuses network effects with economies of scale.
+An exchange's low cost per additional trade is a supply-side advantage.
+A network effect occurs when participation changes the value
+of the service for other users
+\citep[Def.~9.1]{OverbyAudestad2021}.
 \emph{Correction:} Section~\ref{sec:t2}
 opens with this distinction.
 
@@ -233,6 +262,14 @@ The €600 historical-data price matches the 2022 report
 it remains the price in 2026.
 The output did not invent these quoted prices,
 although their dates and scope still required checking.
+We also kept two points from the output. That buyers and
+sellers pay the same fees, so there is no free side,
+is confirmed by the published tariff \citep{NPFees2026}.
+The figure that fees are about 0.15\% of the average price
+also comes from the output; we recalculated it as
+€0.055/MWh (€0.040 trading + €0.015 clearing) divided by
+the 2024 average system price of €36.06/MWh \citep{NP2024},
+which gives 0.15\%.
 
 \textbf{Error 1: missing theoretical test.}
 The output assumes that Nord Pool is an MSP without
@@ -265,10 +302,14 @@ are the main ``money side'' is not established
 by the published tariff.
 Lower fixed fees and caps may encourage participation,
 but do not by themselves identify who finances whom.
-\emph{Correction:} we retain the interpretation of
-differentiated pricing using \citet{RochetTirole2003}
-and \citet{Armstrong2006}, without presenting
-an unverified cross-subsidy as fact.
+\emph{Correction:} we dropped data customers as a money
+side and kept the rest as an explicit, labelled assumption
+rather than a finding. Section~\ref{sec:t3} states the
+assumption, defends it from the fee structure and notes
+that the tariff alone cannot show who finances whom,
+which is what the task asks for when pricing is not fully
+disclosed. We interpret the differentiated pricing using
+\citet{RochetTirole2003} and \citet{Armstrong2006}.
 The Small Participant annual floor is included
 in the revised platform figure.
 
@@ -318,6 +359,22 @@ Its argument about private incentives identifies
 a security-externality mechanism
 \citep{AndersonMoore2006}, although it does not measure
 the alliance's actual security investment.
+Two further parts of the output appear accurate, and we
+kept them. Its division of the attack surface (core trading
+and clearing systems with Nord Pool, capacity data with the
+TSOs, trading systems and credentials with the members,
+incident response shared within the coupling) fits the
+provision structures of \citet{Hirshleifer1983} and is
+consistent with the decoupling incidents
+\citep{NPIncident2019,SDAC2021}; Section~\ref{sec:t4}
+builds on it. Its answer on domestic hosting is also kept:
+the weak points are interfaces, credentials and capacity
+data rather than the data-centre location, and Euronext is
+EU-based. We added the point about extraterritorial access
+by non-EU providers. Public sources do not state where
+Nord Pool's systems are hosted, so this answer rests on the
+attack-surface reasoning rather than on evidence about the
+location.
 
 \textbf{Error 1: instruments implied to exist without evidence.}
 The output lists ``SLAs with penalties between Nord Pool
@@ -391,6 +448,11 @@ The blocks are broadly consistent with Nord Pool's
 own description of its services \citep{NPAbout}
 and with the textbook's block definitions
 \citep[Table~19.1]{OverbyAudestad2021}.
+The value proposition in Section~\ref{sec:t5} (liquid,
+neutral price formation with guaranteed settlement) is kept
+from the output; it matches Nord Pool's description of its
+markets and its role as central counterparty
+\citep{NPAbout,NPClearing}.
 
 \textbf{Error 1: unsupported revenue claim.}
 ``Futures (via Euronext)'' is listed as a Nord Pool
@@ -463,114 +525,48 @@ The revised SRM also distinguishes the wider stakeholder
 network from the narrower set of core platform sides.
 
 % ---------------------------------------------------------------------
-\subsubsection*{A.6 LaTeX conversion of the group's revisions}
+\subsubsection*{A.6 Other AI use: source research, tables, figures and LaTeX conversion}
 
-\textbf{Tool:} Codex, OpenAI desktop app.
-The exact model version was not recorded.
+\textbf{Tool:} Claude (Anthropic), Claude desktop app,
+\texttt{claude-opus-5-5}, October 2026.
+
+\textbf{Use.} Source research, in the same conversation as
+the prompts in A.1--A.5. Claude helped find candidate case
+sources (company pages, press releases, regulations) and
+peer-reviewed articles. Every source cited in this report was
+opened and checked by the group, and no AI tool is cited as
+evidence for any fact.
+
+\textbf{Tool:} Claude (Anthropic), Claude desktop app,
+\texttt{claude-opus-5-5}, 5--6~October 2026.
+
+\textbf{Use.} The group gave Claude its own sketches of how
+the tables and figures should look, and Claude produced the
+tables and figures in the report from these sketches.
+Later revisions of Figures~\ref{fig:msp} and~\ref{fig:srm}
+were converted by ChatGPT (see below). The content of the
+tables and figures (actors, classifications, levels and
+prices) comes from the group's analysis and was checked by
+the group against the main text and sources.
+
+\textbf{Tool:} ChatGPT (OpenAI), model GPT 6.1 Sol.
 
 \textbf{Use.} The group wrote its later revisions in plain text:
 the corrected system-price dependency,
 the revised classification of platform sides,
 and the updated declaration, Appendix~A and reflection text.
-Codex was used only to convert this text into LaTeX code,
+ChatGPT was used only to convert this text into LaTeX code,
 including the TikZ code for Figures~\ref{fig:msp}
 and~\ref{fig:srm}, and to commit it to the project repository.
 The content and wording of these revisions are the group's own.
 The original five task outputs in Appendix~B
 remain unchanged.
 
-\textbf{Tool:} Claude (Anthropic), Claude Code, the same model
-as in A.7, 7~October 2026.
+\textbf{Tool:} Claude (Anthropic), Claude Desktop, Opus 5.5, 7~October 2026.
 
-\textbf{Use.} The group reworded the main text by hand in a Word
-copy of the report (see A.7, Group rewrite). Claude was used only
+\textbf{Use.} The group worked on the text in a Word
+copy of the report. Claude was used only
 to convert that wording back into the LaTeX files, keeping the
-existing citations, cross-references, tables and figures. The
-wording is the group's own.
+existing citations, cross-references, tables and figures.
 
 % ---------------------------------------------------------------------
-\subsubsection*{A.7 AI-drafted report text}
-\label{app:A7}
-
-\textbf{Tool:} Claude, \texttt{claude-opus-5-5}, Claude
-desktop app, 5~October 2026. \quad \textbf{Use:} first draft
-of the main text, tables and figures, produced after the
-five task prompts above and from the same research notes.
-The draft is not reproduced, because the revised text
-replaces it.
-
-\textbf{Claims checked.} We checked the draft's claims and
-references against the cited sources and the textbook. All
-textbook references and all twelve peer-reviewed sources
-were correct. The review found the following errors.
-
-\textbf{Error 1: price calculations not distinguished.} The
-draft stated that Nord Pool cannot calculate a price without
-the TSOs' capacity data, and treated the system price as
-co-produced from TSO data in the same way as the area
-prices. Nord Pool calculates the system price without
-congestion restrictions, with capacities set to infinity,
-while flows between the Nordics and surrounding markets from
-the area-price calculation still enter it as import or
-export orders \citep{NPPrice}. Our first correction
-overstated the opposite case (see A.1, Error~1).
-\emph{Correction:} Sections~\ref{sec:t1} and~\ref{sec:t5}
-now distinguish the two calculations.
-
-\textbf{Error 2: futures platform and revenue.} The draft
-repeated the claim from Appendix~B.1 that the futures were
-relaunched ``in the Nord Pool environment'', and claimed
-that futures revenue accrues to Euronext rather than Nord
-Pool. The press release says the futures trade on Optiq and
-clear on Euronext Clearing, with Nord Pool providing the
-underlying prices, and says nothing about the revenue split
-\citep{Euronext2026}. \emph{Correction:}
-Sections~\ref{sec:t1} and~\ref{sec:t5}, and
-Figure~\ref{fig:bmc}.
-
-\textbf{Error 3: assumptions stated as fact.} The draft
-stated that Nord Pool runs its core engine ``with support
-from Euronext's group capabilities'', which no source
-describes (see A.4, Error~3). It also stated that the free
-ENTSO-E platform ``caps'' what Nord Pool can charge,
-although \citet{ERR2022} only reports that the same data are
-free there. \emph{Correction:} the first is labelled as our
-assumption (Section~\ref{sec:t4}), and the second is stated
-only as a possible constraint (Section~\ref{sec:t3}).
-
-\textbf{Error 4: overstated causality.} The conclusion
-claimed that multi-NEMO competition ``keeps trading fees
-low'', although Task~2 states that we cannot establish
-causality. \emph{Correction:} the conclusion is hedged.
-
-\textbf{Error 5: misattributed theory.} The pass-through
-argument was attributed to \citet{RochetTirole2003}, but it
-comes from their later (2006) work. \emph{Correction:}
-Section~\ref{sec:t3} no longer makes the pass-through
-argument and cites the 2003 paper only for the general logic
-of platform pricing.
-
-\textbf{Error 6: misreading the textbook and the task.} The
-draft listed three value generation blocks, but the textbook
-lists four: key partners, key activities, key resources and
-cost structure \citep[Sect.~19.2]{OverbyAudestad2021}. It
-also discussed blocks beyond the four the task asks us to
-analyse, and never named the sunk costs and learning effects
-that Task~2 lists. It called EPSO-G a TSO (see A.1, Error~3)
-and labelled Nord Pool AS as an alliance partner in
-Table~\ref{tab:cyber}, although it is the platform.
-\emph{Correction:} Sections~\ref{sec:t2}, \ref{sec:t4}
-and~\ref{sec:t5}.
-
-\textbf{Reflection.} The draft was fluent and well
-referenced, which made its errors harder to see. Most were
-not invented facts but small overstatements of what a real
-source says. Catching them required reading the sources
-themselves, not only checking that each citation existed.
-Error~1 shows that our own corrections needed the same
-check.
-
-\textbf{Group rewrite.} Before submission, the group reworded
-the AI-drafted parts of the main text (Sections~1--3) by hand.
-The rewording kept the analysis, the sources and the corrections
-listed in A.1--A.7.

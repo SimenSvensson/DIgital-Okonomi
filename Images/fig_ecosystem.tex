@@ -40,7 +40,7 @@
 
 % dependencies: A -> B means "A depends on B"
 \draw[mut] (eur) -- node[lbl, above=2pt]{ownership $\leftrightarrow$\\technology, capital} (np);
-\draw[dep] (np) -- node[lbl, above=2pt]{capacity data for\\area prices (all TSOs)} (tso);
+\draw[dep] (np.east) -- node[lbl, above=2pt]{capacity data for\\area prices (all TSOs)} (tsos.west |- np.east);
 \draw[dep] (ntso) -- node[lbl, above=2pt]{depend on\\coupling} (ntso -| sdac.east);
 \draw[mut] (mem) -- node[lbl, above=2pt]{liquidity $\leftrightarrow$\\settlement} (mem -| sdac.west);
 \draw[dep] (np) -- node[lbl, right]{designation} (reg);
